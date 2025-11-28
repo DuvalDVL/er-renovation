@@ -15,6 +15,256 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* ========================
+           SERVICES PAGE STYLES
+           ======================== */
+
+        .hero-service {
+            background: linear-gradient(135deg, var(--primary) 0%, #3a3a3a 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-title-service {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle-service {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ========================
+           SERVICES GRID - OVERVIEW
+           ======================== */
+
+        .services-overview-section {
+            padding: 60px 20px;
+            background: var(--white);
+        }
+
+        .services-overview-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-overview-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-overview-card:nth-child(1) { border-left-color: #ff6b35; }
+        .service-overview-card:nth-child(2) { border-left-color: #1e3a5f; }
+        .service-overview-card:nth-child(3) { border-left-color: #d4af37; }
+        .service-overview-card:nth-child(4) { border-left-color: #ff6b35; }
+        .service-overview-card:nth-child(5) { border-left-color: #1e3a5f; }
+        .service-overview-card:nth-child(6) { border-left-color: #d4af37; }
+
+        .service-overview-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card-icon {
+            font-size: 3rem;
+            padding: 2rem;
+            text-align: center;
+            background: var(--light);
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-overview-card h3 {
+            padding: 1.5rem 1.5rem 0.5rem;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .service-overview-card p {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+            font-size: 0.9rem;
+            flex-grow: 1;
+            margin-bottom: 0;
+        }
+
+        .service-overview-card .btn {
+            margin: 0 1.5rem 1.5rem;
+            font-size: 0.9rem;
+            padding: 0.8rem 1.5rem;
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* ========================
+           SERVICES DETAILS SECTION
+           ======================== */
+
+        .services-details-section {
+            padding: 80px 20px;
+            background: var(--light);
+        }
+
+        .services-details-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .service-detail-full {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .service-detail-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--light) 0%, #e0e0e0 100%);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .service-detail-image svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .service-detail-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .service-detail-intro {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .service-detail-content h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-detail-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-detail-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .service-detail-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .service-zones-detail {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .service-zones-detail strong {
+            color: var(--primary);
+        }
+
+        /* ========================
+           CTA SECTION
+           ======================== */
+
+        .cta-services {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-services h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-services p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* ========================
+           RESPONSIVE
+           ======================== */
+
+        @media (max-width: 1024px) {
+            .services-overview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-detail-full {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title-service {
+                font-size: 2rem;
+            }
+
+            .service-detail-full {
+                padding: 1.5rem;
+            }
+
+            .service-detail-content h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
     
     <title>Nos Services de Rénovation - ER Rénovation</title>
 </head>
@@ -52,204 +302,256 @@
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="services-detail-section">
+    <!-- Services Overview Grid -->
+    <section class="services-overview-section">
         <div class="container">
-            <div class="services-detail-grid">
+            <div class="services-overview-grid">
                 
-                <!-- Service 1: Peinture -->
-                <div class="service-detail-card">
-                    <div class="service-image-large">
-                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="400" height="300" fill="#f5f5f5"/>
-                            <rect x="50" y="80" width="300" height="150" fill="#ff6b35" opacity="0.3"/>
-                            <text x="200" y="160" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Peinture Intérieure</text>
-                            <text x="200" y="190" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">et Extérieure</text>
-                        </svg>
-                    </div>
-                    <div class="service-detail-content">
-                        <h2>Peinture Intérieure et Extérieure</h2>
-                        <p class="service-intro">Nous transformons vos espaces avec des peintures de qualité professionnelle et des finitions impeccables. De la préparation des surfaces à l'application finale, chaque détail compte.</p>
-                        
-                        <h3 class="service-h3">Nos prestations incluent :</h3>
-                        <ul class="service-list">
-                            <li>Peinture intérieure (murs, plafonds, boiseries)</li>
-                            <li>Peinture extérieure (façades, volets, portes)</li>
-                            <li>Préparation et ponçage des surfaces</li>
-                            <li>Finitions : mate, brillante, satiné</li>
-                            <li>Peintures écologiques et respirantes disponibles</li>
-                        </ul>
-                        
-                        <div class="service-zones">
-                            <strong>Zones d'intervention :</strong> Passy, Chamonix, Sallanches, Megève, Saint-Gervais, Cluses, Bonneville
-                        </div>
-                        
-                        <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
-                    </div>
+                <!-- Service 1 -->
+                <div class="service-overview-card">
+                    <div class="service-card-icon">🎨</div>
+                    <h3>Peinture Intérieure et Extérieure</h3>
+                    <p>Transformez vos espaces avec des peintures de qualité et des finitions impeccables.</p>
+                    <a href="#peinture" class="btn btn-primary">Découvrir</a>
                 </div>
 
-                <!-- Service 2: Revêtements Muraux -->
-                <div class="service-detail-card">
-                    <div class="service-image-large">
-                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="400" height="300" fill="#f5f5f5"/>
-                            <rect x="80" y="100" width="240" height="120" fill="#1e3a5f" opacity="0.3"/>
-                            <text x="200" y="155" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Revêtements</text>
-                            <text x="200" y="185" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Muraux</text>
-                        </svg>
-                    </div>
-                    <div class="service-detail-content">
-                        <h2>Revêtements Muraux</h2>
-                        <p class="service-intro">Papiers peints modernes, enduits texturés ou carrelage mural design : nous proposons une large gamme de solutions pour habiller vos murs et créer une ambiance unique.</p>
-                        
-                        <h3 class="service-h3">Nos prestations incluent :</h3>
-                        <ul class="service-list">
-                            <li>Pose de papiers peints (tous types)</li>
-                            <li>Enduits décoratifs et texturés</li>
-                            <li>Carrelage mural (salle de bain, cuisine)</li>
-                            <li>Revêtements vinyl et tissu</li>
-                            <li>Préparation des supports</li>
-                        </ul>
-                        
-                        <div class="service-zones">
-                            <strong>Zones d'intervention :</strong> Toute la Haute-Savoie et vallée de l'Arve
-                        </div>
-                        
-                        <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
-                    </div>
+                <!-- Service 2 -->
+                <div class="service-overview-card">
+                    <div class="service-card-icon">🖼️</div>
+                    <h3>Revêtements Muraux</h3>
+                    <p>Papiers peints, enduits et carrelage pour créer une ambiance unique.</p>
+                    <a href="#revetements-muraux" class="btn btn-primary">Découvrir</a>
                 </div>
 
-                <!-- Service 3: Revêtements de Sols -->
-                <div class="service-detail-card">
-                    <div class="service-image-large">
-                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="400" height="300" fill="#f5f5f5"/>
-                            <rect x="60" y="120" width="280" height="100" fill="#d4af37" opacity="0.3"/>
-                            <text x="200" y="160" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Revêtements</text>
-                            <text x="200" y="190" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">de Sols</text>
-                        </svg>
-                    </div>
-                    <div class="service-detail-content">
-                        <h2>Revêtements de Sols</h2>
-                        <p class="service-intro">Du carrelage élégant au stratifié durable, en passant par le vinyl tendance : nous posons tous types de revêtements de sol avec précision et professionnalisme.</p>
-                        
-                        <h3 class="service-h3">Nos prestations incluent :</h3>
-                        <ul class="service-list">
-                            <li>Pose de carrelage (intérieur et salle humide)</li>
-                            <li>Stratifié et parquet flottant</li>
-                            <li>Revêtements vinyl et PVC</li>
-                            <li>Préparation et nivellement des sols</li>
-                            <li>Pose de joints et finitions</li>
-                        </ul>
-                        
-                        <div class="service-zones">
-                            <strong>Zones d'intervention :</strong> Passy, Chamonix, Sallanches, Megève, Saint-Gervais, Cluses, Bonneville
-                        </div>
-                        
-                        <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
-                    </div>
+                <!-- Service 3 -->
+                <div class="service-overview-card">
+                    <div class="service-card-icon">⬇️</div>
+                    <h3>Revêtements de Sols</h3>
+                    <p>Carrelage, stratifié, vinyl - tous types de sols posés avec précision.</p>
+                    <a href="#revetements-sols" class="btn btn-primary">Découvrir</a>
                 </div>
 
-                <!-- Service 4: Maçonnerie & Plâtrerie -->
-                <div class="service-detail-card">
-                    <div class="service-image-large">
-                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="400" height="300" fill="#f5f5f5"/>
-                            <rect x="70" y="90" width="260" height="140" fill="#ff6b35" opacity="0.2"/>
-                            <text x="200" y="155" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Maçonnerie</text>
-                            <text x="200" y="185" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">et Plâtrerie</text>
-                        </svg>
-                    </div>
-                    <div class="service-detail-content">
-                        <h2>Maçonnerie et Plâtrerie</h2>
-                        <p class="service-intro">Travaux de maçonnerie structurels ou cloisons légères, enduits de finition ou réparations : nos artisans maîtrisent tous les aspects de la plâtrerie et maçonnerie.</p>
-                        
-                        <h3 class="service-h3">Nos prestations incluent :</h3>
-                        <ul class="service-list">
-                            <li>Construction et réparation de cloisons</li>
-                            <li>Enduits de finition (lissé, gratté, taloché)</li>
-                            <li>Petits travaux de maçonnerie</li>
-                            <li>Réparation de fissures et dégâts</li>
-                            <li>Isolation intérieure par doublage</li>
-                        </ul>
-                        
-                        <div class="service-zones">
-                            <strong>Zones d'intervention :</strong> Toute la Haute-Savoie et vallée de l'Arve
-                        </div>
-                        
-                        <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
-                    </div>
+                <!-- Service 4 -->
+                <div class="service-overview-card">
+                    <div class="service-card-icon">🧱</div>
+                    <h3>Maçonnerie et Plâtrerie</h3>
+                    <p>Construction, cloisons, enduits de finition et petits travaux de maçonnerie.</p>
+                    <a href="#maconnerie" class="btn btn-primary">Découvrir</a>
                 </div>
 
-                <!-- Service 5: Menuiserie -->
-                <div class="service-detail-card">
-                    <div class="service-image-large">
-                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="400" height="300" fill="#f5f5f5"/>
-                            <rect x="90" y="100" width="220" height="130" fill="#1e3a5f" opacity="0.2"/>
-                            <text x="200" y="160" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Menuiserie</text>
-                        </svg>
-                    </div>
-                    <div class="service-detail-content">
-                        <h2>Menuiserie</h2>
-                        <p class="service-intro">Fabrication sur mesure, installation et restauration de menuiseries : portes, fenêtres, escaliers et éléments décorés. Travail de précision et finitions soignées.</p>
-                        
-                        <h3 class="service-h3">Nos prestations incluent :</h3>
-                        <ul class="service-list">
-                            <li>Fabrication de portes et encadrements</li>
-                            <li>Installation de menuiseries</li>
-                            <li>Restauration de boiseries anciennes</li>
-                            <li>Placards et rangements sur mesure</li>
-                            <li>Petits escaliers et rampes</li>
-                        </ul>
-                        
-                        <div class="service-zones">
-                            <strong>Zones d'intervention :</strong> Passy, Chamonix, Sallanches, Megève, Saint-Gervais, Cluses, Bonneville
-                        </div>
-                        
-                        <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
-                    </div>
+                <!-- Service 5 -->
+                <div class="service-overview-card">
+                    <div class="service-card-icon">🚪</div>
+                    <h3>Menuiserie</h3>
+                    <p>Fabrication sur mesure, installation et restauration de menuiseries.</p>
+                    <a href="#menuiserie" class="btn btn-primary">Découvrir</a>
                 </div>
 
-                <!-- Service 6: Dégâts des Eaux -->
-                <div class="service-detail-card">
-                    <div class="service-image-large">
-                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="400" height="300" fill="#f5f5f5"/>
-                            <rect x="80" y="110" width="240" height="110" fill="#1e3a5f" opacity="0.3"/>
-                            <text x="200" y="155" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Réparation</text>
-                            <text x="200" y="185" font-size="24" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Dégâts des Eaux</text>
-                        </svg>
-                    </div>
-                    <div class="service-detail-content">
-                        <h2>Réparation Dégâts des Eaux</h2>
-                        <p class="service-intro">Intervention d'urgence 24/7 pour les dégâts des eaux. Localisation des fuites, asséchage, restauration des éléments endommagés et remise en état complète.</p>
-                        
-                        <h3 class="service-h3">Nos prestations incluent :</h3>
-                        <ul class="service-list">
-                            <li>Intervention d'urgence 24h/24</li>
-                            <li>Localisation et réparation des fuites</li>
-                            <li>Asséchage et aération des zones humides</li>
-                            <li>Remplacement de cloisons et finitions</li>
-                            <li>Traitement anti-moisissures</li>
-                        </ul>
-                        
-                        <div class="service-zones">
-                            <strong>Zones d'intervention :</strong> Toute la Haute-Savoie - Interventions prioritaires
-                        </div>
-                        
-                        <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
-                    </div>
+                <!-- Service 6 -->
+                <div class="service-overview-card">
+                    <div class="service-card-icon">💧</div>
+                    <h3>Réparation Dégâts des Eaux</h3>
+                    <p>Intervention d'urgence 24/7 - localisation, réparation et restauration.</p>
+                    <a href="#degats-eaux" class="btn btn-primary">Découvrir</a>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <!-- Services Details -->
+    <section class="services-details-section">
+        <div class="container">
+            <h2>Détails de nos prestations</h2>
+
+            <!-- Peinture -->
+            <div class="service-detail-full" id="peinture">
+                <div class="service-detail-image">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="#f5f5f5"/>
+                        <rect x="50" y="80" width="300" height="150" fill="#ff6b35" opacity="0.3"/>
+                        <text x="200" y="160" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Peinture</text>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Peinture Intérieure et Extérieure</h3>
+                    <p class="service-detail-intro">Nous transformons vos espaces avec des peintures de qualité professionnelle et des finitions impeccables. De la préparation des surfaces à l'application finale, chaque détail compte.</p>
+                    
+                    <h4>Nos prestations incluent :</h4>
+                    <ul class="service-detail-list">
+                        <li>Peinture intérieure (murs, plafonds, boiseries)</li>
+                        <li>Peinture extérieure (façades, volets, portes)</li>
+                        <li>Préparation et ponçage des surfaces</li>
+                        <li>Finitions : mate, brillante, satiné</li>
+                        <li>Peintures écologiques et respirantes disponibles</li>
+                    </ul>
+                    
+                    <div class="service-zones-detail">
+                        <strong>Zones d'intervention :</strong> Passy, Chamonix, Sallanches, Megève, Saint-Gervais, Cluses, Bonneville
+                    </div>
+                    
+                    <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
+                </div>
+            </div>
+
+            <!-- Revêtements Muraux -->
+            <div class="service-detail-full" id="revetements-muraux">
+                <div class="service-detail-image">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="#f5f5f5"/>
+                        <rect x="80" y="100" width="240" height="120" fill="#1e3a5f" opacity="0.3"/>
+                        <text x="200" y="160" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Revêtements</text>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Revêtements Muraux</h3>
+                    <p class="service-detail-intro">Papiers peints modernes, enduits texturés ou carrelage mural design : nous proposons une large gamme de solutions pour habiller vos murs et créer une ambiance unique.</p>
+                    
+                    <h4>Nos prestations incluent :</h4>
+                    <ul class="service-detail-list">
+                        <li>Pose de papiers peints (tous types)</li>
+                        <li>Enduits décoratifs et texturés</li>
+                        <li>Carrelage mural (salle de bain, cuisine)</li>
+                        <li>Revêtements vinyl et tissu</li>
+                        <li>Préparation des supports</li>
+                    </ul>
+                    
+                    <div class="service-zones-detail">
+                        <strong>Zones d'intervention :</strong> Toute la Haute-Savoie et vallée de l'Arve
+                    </div>
+                    
+                    <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
+                </div>
+            </div>
+
+            <!-- Revêtements Sols -->
+            <div class="service-detail-full" id="revetements-sols">
+                <div class="service-detail-image">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="#f5f5f5"/>
+                        <rect x="60" y="120" width="280" height="100" fill="#d4af37" opacity="0.3"/>
+                        <text x="200" y="170" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Revêtements</text>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Revêtements de Sols</h3>
+                    <p class="service-detail-intro">Du carrelage élégant au stratifié durable, en passant par le vinyl tendance : nous posons tous types de revêtements de sol avec précision et professionnalisme.</p>
+                    
+                    <h4>Nos prestations incluent :</h4>
+                    <ul class="service-detail-list">
+                        <li>Pose de carrelage (intérieur et salle humide)</li>
+                        <li>Stratifié et parquet flottant</li>
+                        <li>Revêtements vinyl et PVC</li>
+                        <li>Préparation et nivellement des sols</li>
+                        <li>Pose de joints et finitions</li>
+                    </ul>
+                    
+                    <div class="service-zones-detail">
+                        <strong>Zones d'intervention :</strong> Passy, Chamonix, Sallanches, Megève, Saint-Gervais, Cluses, Bonneville
+                    </div>
+                    
+                    <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
+                </div>
+            </div>
+
+            <!-- Maçonnerie -->
+            <div class="service-detail-full" id="maconnerie">
+                <div class="service-detail-image">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="#f5f5f5"/>
+                        <rect x="70" y="90" width="260" height="140" fill="#ff6b35" opacity="0.2"/>
+                        <text x="200" y="160" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Maçonnerie</text>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Maçonnerie et Plâtrerie</h3>
+                    <p class="service-detail-intro">Travaux de maçonnerie structurels ou cloisons légères, enduits de finition ou réparations : nos artisans maîtrisent tous les aspects de la plâtrerie et maçonnerie.</p>
+                    
+                    <h4>Nos prestations incluent :</h4>
+                    <ul class="service-detail-list">
+                        <li>Construction et réparation de cloisons</li>
+                        <li>Enduits de finition (lissé, gratté, taloché)</li>
+                        <li>Petits travaux de maçonnerie</li>
+                        <li>Réparation de fissures et dégâts</li>
+                        <li>Isolation intérieure par doublage</li>
+                    </ul>
+                    
+                    <div class="service-zones-detail">
+                        <strong>Zones d'intervention :</strong> Toute la Haute-Savoie et vallée de l'Arve
+                    </div>
+                    
+                    <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
+                </div>
+            </div>
+
+            <!-- Menuiserie -->
+            <div class="service-detail-full" id="menuiserie">
+                <div class="service-detail-image">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="#f5f5f5"/>
+                        <rect x="90" y="100" width="220" height="130" fill="#1e3a5f" opacity="0.2"/>
+                        <text x="200" y="160" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Menuiserie</text>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Menuiserie</h3>
+                    <p class="service-detail-intro">Fabrication sur mesure, installation et restauration de menuiseries : portes, fenêtres, escaliers et éléments décorés. Travail de précision et finitions soignées.</p>
+                    
+                    <h4>Nos prestations incluent :</h4>
+                    <ul class="service-detail-list">
+                        <li>Fabrication de portes et encadrements</li>
+                        <li>Installation de menuiseries</li>
+                        <li>Restauration de boiseries anciennes</li>
+                        <li>Placards et rangements sur mesure</li>
+                        <li>Petits escaliers et rampes</li>
+                    </ul>
+                    
+                    <div class="service-zones-detail">
+                        <strong>Zones d'intervention :</strong> Passy, Chamonix, Sallanches, Megève, Saint-Gervais, Cluses, Bonneville
+                    </div>
+                    
+                    <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
+                </div>
+            </div>
+
+            <!-- Dégâts des Eaux -->
+            <div class="service-detail-full" id="degats-eaux">
+                <div class="service-detail-image">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="#f5f5f5"/>
+                        <rect x="80" y="110" width="240" height="110" fill="#1e3a5f" opacity="0.3"/>
+                        <text x="200" y="155" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Dégâts des</text>
+                        <text x="200" y="185" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Eaux</text>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Réparation Dégâts des Eaux</h3>
+                    <p class="service-detail-intro">Intervention d'urgence 24/7 pour les dégâts des eaux. Localisation des fuites, asséchage, restauration des éléments endommagés et remise en état complète.</p>
+                    
+                    <h4>Nos prestations incluent :</h4>
+                    <ul class="service-detail-list">
+                        <li>Intervention d'urgence 24h/24</li>
+                        <li>Localisation et réparation des fuites</li>
+                        <li>Asséchage et aération des zones humides</li>
+                        <li>Remplacement de cloisons et finitions</li>
+                        <li>Traitement anti-moisissures</li>
+                    </ul>
+                    
+                    <div class="service-zones-detail">
+                        <strong>Zones d'intervention :</strong> Toute la Haute-Savoie - Interventions prioritaires
+                    </div>
+                    
+                    <a href="/devis-gratuit/" class="btn btn-primary">Demander un devis gratuit</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-services">
         <div class="container">
-            <h2>Votre service n'est pas listé ?</h2>
+            <h2>Votre projet ne correspond à aucune catégorie ?</h2>
             <p>Nous réalisons également des travaux sur mesure adaptés à vos besoins spécifiques</p>
             <a href="/devis-gratuit/" class="btn btn-primary btn-large">Nous consulter pour un projet spécial</a>
         </div>
