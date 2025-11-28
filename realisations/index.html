@@ -1,1 +1,772 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez nos réalisations de rénovation : galerie de photos de nos chantiers à Passy, Chamonix et Haute-Savoie.">
+    <meta name="keywords" content="réalisations rénovation, galerie photos, chantiers rénovation, Haute-Savoie">
+    <meta name="author" content="ER Rénovation">
+    <meta property="og:title" content="Nos Réalisations - ER Rénovation">
+    <meta property="og:description" content="Galerie de nos réalisations et chantiers réussis">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* ========================
+           REALISATIONS PAGE STYLES
+           ======================== */
 
+        .hero-realisations {
+            background: linear-gradient(135deg, var(--primary) 0%, #3a3a3a 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-title-realisations {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle-realisations {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ========================
+           FILTERS
+           ======================== */
+
+        .filters-section {
+            padding: 40px 20px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .filters-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--accent);
+            background: var(--white);
+            color: var(--accent);
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* ========================
+           GALLERY GRID
+           ======================== */
+
+        .gallery-section {
+            padding: 60px 20px;
+            background: var(--light);
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .gallery-placeholder {
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+
+        /* ========================
+           SERVICE SECTIONS
+           ======================== */
+
+        .realisations-by-service {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .service-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 80px;
+        }
+
+        .service-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-section h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .service-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+        }
+
+        .service-gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* ========================
+           STATS SECTION
+           ======================== */
+
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ========================
+           CTA SECTION
+           ======================== */
+
+        .cta-realisations {
+            background: var(--light);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-realisations h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .cta-realisations p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========================
+           MODAL LIGHTBOX
+           ======================== */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+
+        .modal img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: var(--radius);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: var(--white);
+            color: var(--primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* ========================
+           RESPONSIVE
+           ======================== */
+
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-title-realisations {
+                font-size: 2rem;
+            }
+
+            .filters-container {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <title>Nos Réalisations - ER Rénovation</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="ER Rénovation Logo" class="logo-img">
+                <span class="logo-text">ER RÉNOVATION</span>
+            </div>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/services/" class="nav-link">Services</a></li>
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/#zones" class="nav-link">Zones d'intervention</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-realisations">
+        <div class="container">
+            <h1 class="hero-title-realisations">Nos Réalisations</h1>
+            <p class="hero-subtitle-realisations">Découvrez les projets que nous avons réalisés avec succès</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Chantiers réalisés</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10 ans</div>
+                <div class="stat-label">D'expérience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Clients satisfaits</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery by Service -->
+    <section class="realisations-by-service">
+        <div class="service-section">
+            <h2>🎨 Peinture Intérieure et Extérieure</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🎨</div>
+                    <div class="gallery-overlay">
+                        <h3>Peinture intérieure</h3>
+                        <p>Salon moderne</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🎨</div>
+                    <div class="gallery-overlay">
+                        <h3>Peinture extérieure</h3>
+                        <p>Façade rénovée</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🎨</div>
+                    <div class="gallery-overlay">
+                        <h3>Chambre</h3>
+                        <p>Finition satiné</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🎨</div>
+                    <div class="gallery-overlay">
+                        <h3>Cuisine</h3>
+                        <p>Finition brillante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h2>🖼️ Revêtements Muraux</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🖼️</div>
+                    <div class="gallery-overlay">
+                        <h3>Papier peint</h3>
+                        <p>Design moderne</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🖼️</div>
+                    <div class="gallery-overlay">
+                        <h3>Carrelage mural</h3>
+                        <p>Salle de bain</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🖼️</div>
+                    <div class="gallery-overlay">
+                        <h3>Enduit texturé</h3>
+                        <p>Finition élégante</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🖼️</div>
+                    <div class="gallery-overlay">
+                        <h3>Revêtement vinyl</h3>
+                        <p>Effet pierre</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h2>⬇️ Revêtements de Sols</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">⬇️</div>
+                    <div class="gallery-overlay">
+                        <h3>Carrelage</h3>
+                        <p>Cuisine moderne</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">⬇️</div>
+                    <div class="gallery-overlay">
+                        <h3>Stratifié</h3>
+                        <p>Salon confortable</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">⬇️</div>
+                    <div class="gallery-overlay">
+                        <h3>Vinyl</h3>
+                        <p>Effet bois</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">⬇️</div>
+                    <div class="gallery-overlay">
+                        <h3>Parquet flottant</h3>
+                        <p>Chambre élégante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h2>🧱 Maçonnerie et Plâtrerie</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🧱</div>
+                    <div class="gallery-overlay">
+                        <h3>Cloison placo</h3>
+                        <p>Aménagement intérieur</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🧱</div>
+                    <div class="gallery-overlay">
+                        <h3>Enduit de finition</h3>
+                        <p>Finition lissée</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🧱</div>
+                    <div class="gallery-overlay">
+                        <h3>Réparation murs</h3>
+                        <p>Fissures réparées</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🧱</div>
+                    <div class="gallery-overlay">
+                        <h3>Doublage intérieur</h3>
+                        <p>Isolation thermique</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h2>🚪 Menuiserie</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🚪</div>
+                    <div class="gallery-overlay">
+                        <h3>Portes sur mesure</h3>
+                        <p>Design personnalisé</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🚪</div>
+                    <div class="gallery-overlay">
+                        <h3>Placards</h3>
+                        <p>Rangements optimisés</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🚪</div>
+                    <div class="gallery-overlay">
+                        <h3>Restauration bois</h3>
+                        <p>Ancien revisité</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">🚪</div>
+                    <div class="gallery-overlay">
+                        <h3>Encadrements</h3>
+                        <p>Finitions précises</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h2>💧 Réparation Dégâts des Eaux</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">💧</div>
+                    <div class="gallery-overlay">
+                        <h3>Restauration</h3>
+                        <p>Après sinistre</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">💧</div>
+                    <div class="gallery-overlay">
+                        <h3>Asséchage</h3>
+                        <p>Traitement complet</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">💧</div>
+                    <div class="gallery-overlay">
+                        <h3>Remise en état</h3>
+                        <p>Comme neuf</p>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="gallery-placeholder">💧</div>
+                    <div class="gallery-overlay">
+                        <h3>Anti-moisissures</h3>
+                        <p>Protection durable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-realisations">
+        <div class="container">
+            <h2>Vous aimeriez une transformation similaire ?</h2>
+            <p>Contactez-nous pour discuter de votre projet de rénovation. Nos artisans sont prêts à créer votre réussite !</p>
+            <a href="/devis-gratuit/" class="btn btn-primary btn-large">Demander un devis gratuit</a>
+        </div>
+    </section>
+
+    <!-- Modal Lightbox -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">✕</button>
+            <img id="modalImage" src="" alt="Réalisation agrandie">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ER RÉNOVATION</h4>
+                    <p>Votre expert en rénovation à Passy, Haute-Savoie</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61556789047369" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/maconnerie-platerie/">Maçonnerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Dégâts des eaux</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Zones d'intervention</h4>
+                    <ul>
+                        <li><a href="/zones-intervention/renovation-passy/">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix/">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve/">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches/">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais/">Saint-Gervais</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33688483403">06 88 48 34 03</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:errenovation74190@gmail.com">errenovation74190@gmail.com</a></p>
+                    <p><strong>Adresse :</strong><br>481 avenue de Chamonix<br>74190 Passy</p>
+                    <p><strong>Horaires :</strong><br>Lun-Sam : 8h-19h30<br>Dimanche : Fermé</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ER Rénovation - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <span>•</span>
+                    <a href="/#contact">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // ========================
+        // LIGHTBOX MODAL
+        // ========================
+
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+        const modalClose = document.getElementById('modalClose');
+        const galleryItems = document.querySelectorAll('.service-gallery-item');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const overlay = item.querySelector('.gallery-overlay');
+                const title = overlay.querySelector('h3').textContent;
+                const subtitle = overlay.querySelector('p').textContent;
+                
+                // Pour la démo, on utilise le placeholder emoji
+                // En production, ce serait une vraie image
+                modalImage.alt = `${title} - ${subtitle}`;
+                modal.classList.add('open');
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('open');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('open');
+            }
+        });
+
+        // Fermer avec la touche Echap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('open')) {
+                modal.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
