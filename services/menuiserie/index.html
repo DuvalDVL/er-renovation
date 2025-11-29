@@ -1,1 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menuiserie à Passy : fabrication, installation, restauration. Portes, fenêtres, placards sur mesure. Devis gratuit sous 48h.">
+    <meta name="keywords" content="menuiserie, portes, fenêtres, placards, menuisier, Passy, Haute-Savoie">
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .hero-service-detail { background: linear-gradient(135deg, #1e3a5f 0%, #2a4d7a 100%); color: var(--white); padding: 80px 20px; text-align: center; }
+        .hero-service-detail h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .hero-service-detail p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto 2rem; }
+        .hero-service-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .service-intro-section { padding: 60px 20px; background: var(--white); }
+        .service-intro-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
+        .service-intro-text h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem; }
+        .service-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
+        .service-intro-image { background: var(--light); border-radius: var(--radius); padding: 2rem; min-height: 350px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
+        .service-intro-image-placeholder { font-size: 5rem; }
+        .service-details-section { padding: 80px 20px; background: var(--light); }
+        .service-details-container { max-width: 1200px; margin: 0 auto; }
+        .service-details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+        .service-detail-card { background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow); border-top: 4px solid #1e3a5f; }
+        .service-detail-card h3 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.4rem; }
+        .service-detail-card ul { list-style: none; padding: 0; }
+        .service-detail-card li { padding: 0.6rem 0; padding-left: 1.8rem; position: relative; color: #555; line-height: 1.6; }
+        .service-detail-card li:before { content: "✓"; position: absolute; left: 0; color: #1e3a5f; font-weight: bold; font-size: 1.2rem; }
+        .service-detail-card p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+        .service-gallery-section { padding: 80px 20px; background: var(--white); }
+        .service-gallery-container { max-width: 1200px; margin: 0 auto; }
+        .service-gallery-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .service-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .service-gallery-item { aspect-ratio: 1; background: var(--light); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; }
+        .service-gallery-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .service-gallery-placeholder { font-size: 3rem; opacity: 0.3; }
+        .service-gallery-overlay { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 1rem; text-align: center; }
+        .service-gallery-item:hover .service-gallery-overlay { opacity: 1; }
+        .service-gallery-overlay h4 { color: var(--white); font-size: 1.1rem; }
+        .service-process-section { padding: 80px 20px; background: var(--light); }
+        .service-process-container { max-width: 1200px; margin: 0 auto; }
+        .service-process-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .process-step { text-align: center; padding: 2rem; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+        .process-step-number { width: 50px; height: 50px; background: #1e3a5f; color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1.5rem; }
+        .process-step h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem; }
+        .process-step p { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; }
+        .service-faq-section { padding: 80px 20px; background: var(--white); }
+        .service-faq-container { max-width: 900px; margin: 0 auto; }
+        .service-faq-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .service-cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .service-cta-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .service-cta-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
+        @media (max-width: 1024px) { .service-intro-container, .service-details-grid { grid-template-columns: 1fr; } .process-steps, .service-gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .hero-service-detail h1 { font-size: 2rem; } .hero-service-cta { flex-direction: column; } .process-steps, .service-gallery-grid { grid-template-columns: 1fr; } }
+    </style>
+    <title>Menuiserie - ER Rénovation Passy</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="../../images/logo.png" alt="ER Rénovation Logo" class="logo-img">
+                <span class="logo-text">ER RÉNOVATION</span>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/services/" class="nav-link">Services</a></li>
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/zones-intervention/" class="nav-link">Zones d'intervention</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <section class="hero-service-detail">
+        <div class="container">
+            <h1>Menuiserie</h1>
+            <p>Fabrication sur mesure, installation et restauration de menuiseries. Travail de précision et finitions soignées.</p>
+            <div class="hero-service-cta">
+                <a href="/devis-gratuit/" class="btn btn-primary btn-large">Devis gratuit</a>
+                <a href="tel:+33688483403" class="btn btn-secondary btn-large">06 88 48 34 03</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-intro-section">
+        <div class="service-intro-container">
+            <div class="service-intro-text">
+                <h2>Artisan Menuisier Expérimenté</h2>
+                <p>La menuiserie allie savoir-faire technique et sens esthétique. Nous réalisons des ouvrages sur mesure adaptés à vos besoins : portes intérieures, placards, éléments de rangement et petits travaux de menuiserie.</p>
+                <p>Que vous souhaitiez du neuf ou la restauration d'éléments anciens, nous travaillons avec précision et passion du bois pour donner vie à vos projets.</p>
+                <p>Installation de menuiseries, ajustements, réparations : notre expertise couvre tous les aspects de la menuiserie intérieure pour votre confort et votre satisfaction.</p>
+            </div>
+            <div class="service-intro-image">
+                <div class="service-intro-image-placeholder">🚪</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-details-section">
+        <div class="service-details-container">
+            <div class="service-details-grid">
+                <div class="service-detail-card">
+                    <h3>🚪 Portes & Encadrements</h3>
+                    <p>Installation et fabrication de portes intérieures.</p>
+                    <ul>
+                        <li>Portes intérieures standards</li>
+                        <li>Portes sur mesure</li>
+                        <li>Portes coulissantes</li>
+                        <li>Encadrements et bâtis</li>
+                        <li>Pose de poignées et serrures</li>
+                        <li>Ajustements et réglages</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🗄️ Placards & Rangements</h3>
+                    <p>Solutions de rangement optimisées sur mesure.</p>
+                    <ul>
+                        <li>Placards sous pente</li>
+                        <li>Dressings sur mesure</li>
+                        <li>Bibliothèques intégrées</li>
+                        <li>Étagères murales</li>
+                        <li>Meubles encastrés</li>
+                        <li>Aménagements fonctionnels</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🔨 Petite Menuiserie</h3>
+                    <p>Travaux de menuiserie générale et réparations.</p>
+                    <ul>
+                        <li>Plinthes et moulures</li>
+                        <li>Barres de seuil</li>
+                        <li>Habillages et coffres</li>
+                        <li>Petites réparations bois</li>
+                        <li>Tablettes et étagères</li>
+                        <li>Aménagements divers</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🔧 Restauration</h3>
+                    <p>Remise en état d'éléments de menuiserie anciens.</p>
+                    <ul>
+                        <li>Restauration portes anciennes</li>
+                        <li>Réparation boiseries</li>
+                        <li>Décapage et ponçage</li>
+                        <li>Traitement du bois</li>
+                        <li>Finitions traditionnelles</li>
+                        <li>Respect du patrimoine</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-gallery-section">
+        <div class="service-gallery-container">
+            <h2>Nos Réalisations en Menuiserie</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🚪</div>
+                    <div class="service-gallery-overlay"><h4>Porte sur mesure</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🚪</div>
+                    <div class="service-gallery-overlay"><h4>Placard intégré</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🚪</div>
+                    <div class="service-gallery-overlay"><h4>Bibliothèque</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🚪</div>
+                    <div class="service-gallery-overlay"><h4>Porte coulissante</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🚪</div>
+                    <div class="service-gallery-overlay"><h4>Dressing sur mesure</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🚪</div>
+                    <div class="service-gallery-overlay"><h4>Restauration</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-process-section">
+        <div class="service-process-container">
+            <h2>Notre Processus de Travail</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-number">1</div>
+                    <h3>Étude du Projet</h3>
+                    <p>Relevé de mesures précis, définition de vos besoins, choix des matériaux et devis détaillé.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">2</div>
+                    <h3>Fabrication</h3>
+                    <p>Réalisation en atelier pour les éléments sur mesure, préparation minutieuse des pièces.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">3</div>
+                    <h3>Installation</h3>
+                    <p>Pose professionnelle sur site, ajustements précis, vérification du bon fonctionnement.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">4</div>
+                    <h3>Finitions</h3>
+                    <p>Réglages finaux, nettoyage, vérification qualité et remise des conseils d'entretien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-faq-section">
+        <div class="service-faq-container">
+            <h2>Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="1">
+                        <span>Combien coûte une porte intérieure sur mesure ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-1">
+                        <p>Entre 300€ et 800€ selon le modèle, les dimensions, le bois choisi et les finitions. Les portes standard sont moins coûteuses (150-400€). Demandez un devis pour votre projet spécifique.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="2">
+                        <span>Quels types de bois utilisez-vous ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-2">
+                        <p>Pin, sapin, chêne, hêtre selon le projet et le budget. Le médium (MDF) pour les éléments peints. Nous vous conseillons le matériau adapté à votre usage et vos contraintes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="3">
+                        <span>Combien de temps pour un placard sur mesure ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-3">
+                        <p>Délai de fabrication : 2-4 semaines selon la complexité. Installation : 1-3 jours. Nous planifions avec vous les étapes dès la commande.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="4">
+                        <span>Peut-on restaurer une vieille porte abîmée ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-4">
+                        <p>Oui dans la plupart des cas ! Nous évaluons l'état, décapons, réparons les éclats, retraitons le bois et appliquons de nouvelles finitions. La porte retrouve son éclat d'origine.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="5">
+                        <span>Proposez-vous des garanties ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-5">
+                        <p>Oui, garantie décennale sur nos travaux et garantie constructeur sur les matériaux utilisés. Nous assurons également le service après-vente pour tout ajustement nécessaire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-cta-section">
+        <div class="container">
+            <h2>Un Projet de Menuiserie ?</h2>
+            <p>Contactez-nous pour un devis gratuit et des conseils personnalisés</p>
+            <a href="/devis-gratuit/" class="btn btn-primary btn-large">Demander un devis</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ER RÉNOVATION</h4>
+                    <p>Votre expert en rénovation à Passy, Haute-Savoie</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61556789047369" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/maconnerie-platerie/">Maçonnerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Dégâts des eaux</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Zones d'intervention</h4>
+                    <ul>
+                        <li><a href="/zones-intervention/renovation-passy/">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix/">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve/">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches/">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais/">Saint-Gervais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33688483403">06 88 48 34 03</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:errenovation74190@gmail.com">errenovation74190@gmail.com</a></p>
+                    <p><strong>Adresse :</strong><br>481 avenue de Chamonix<br>74190 Passy</p>
+                    <p><strong>Horaires :</strong><br>Lun-Sam : 8h-19h30<br>Dimanche : Fermé</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ER Rénovation - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <span>•</span>
+                    <a href="/#contact">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
