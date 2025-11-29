@@ -1,1 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Réparation dégâts des eaux à Passy : intervention d'urgence 24/7, asséchage, restauration. Expert sinistres depuis 10 ans.">
+    <meta name="keywords" content="dégâts des eaux, fuite, sinistre, réparation urgente, asséchage, Passy, Haute-Savoie">
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .hero-service-detail { background: linear-gradient(135deg, #d4af37 0%, #c9a030 100%); color: var(--white); padding: 80px 20px; text-align: center; }
+        .hero-service-detail h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .hero-service-detail p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto 2rem; }
+        .hero-service-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .urgence-banner { background: #d32f2f; color: white; padding: 1.5rem; text-align: center; font-size: 1.2rem; font-weight: 700; }
+        .service-intro-section { padding: 60px 20px; background: var(--white); }
+        .service-intro-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
+        .service-intro-text h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem; }
+        .service-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
+        .service-intro-image { background: var(--light); border-radius: var(--radius); padding: 2rem; min-height: 350px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
+        .service-intro-image-placeholder { font-size: 5rem; }
+        .service-details-section { padding: 80px 20px; background: var(--light); }
+        .service-details-container { max-width: 1200px; margin: 0 auto; }
+        .service-details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+        .service-detail-card { background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow); border-top: 4px solid #d4af37; }
+        .service-detail-card h3 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.4rem; }
+        .service-detail-card ul { list-style: none; padding: 0; }
+        .service-detail-card li { padding: 0.6rem 0; padding-left: 1.8rem; position: relative; color: #555; line-height: 1.6; }
+        .service-detail-card li:before { content: "✓"; position: absolute; left: 0; color: #d4af37; font-weight: bold; font-size: 1.2rem; }
+        .service-detail-card p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+        .service-gallery-section { padding: 80px 20px; background: var(--white); }
+        .service-gallery-container { max-width: 1200px; margin: 0 auto; }
+        .service-gallery-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .service-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .service-gallery-item { aspect-ratio: 1; background: var(--light); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; }
+        .service-gallery-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .service-gallery-placeholder { font-size: 3rem; opacity: 0.3; }
+        .service-gallery-overlay { position: absolute; inset: 0; background: rgba(212, 175, 55, 0.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 1rem; text-align: center; }
+        .service-gallery-item:hover .service-gallery-overlay { opacity: 1; }
+        .service-gallery-overlay h4 { color: var(--white); font-size: 1.1rem; }
+        .service-process-section { padding: 80px 20px; background: var(--light); }
+        .service-process-container { max-width: 1200px; margin: 0 auto; }
+        .service-process-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .process-step { text-align: center; padding: 2rem; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+        .process-step-number { width: 50px; height: 50px; background: #d4af37; color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1.5rem; }
+        .process-step h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem; }
+        .process-step p { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; }
+        .service-faq-section { padding: 80px 20px; background: var(--white); }
+        .service-faq-container { max-width: 900px; margin: 0 auto; }
+        .service-faq-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .service-cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .service-cta-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .service-cta-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
+        @media (max-width: 1024px) { .service-intro-container, .service-details-grid { grid-template-columns: 1fr; } .process-steps, .service-gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .hero-service-detail h1 { font-size: 2rem; } .hero-service-cta { flex-direction: column; } .process-steps, .service-gallery-grid { grid-template-columns: 1fr; } }
+    </style>
+    <title>Réparation Dégâts des Eaux - ER Rénovation Passy</title>
+</head>
+<body>
+    <div class="urgence-banner">
+        🚨 URGENCE DÉGÂTS DES EAUX ? APPELEZ-NOUS : 06 88 48 34 03 - INTERVENTION RAPIDE
+    </div>
 
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="../../images/logo.png" alt="ER Rénovation Logo" class="logo-img">
+                <span class="logo-text">ER RÉNOVATION</span>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/services/" class="nav-link">Services</a></li>
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/zones-intervention/" class="nav-link">Zones d'intervention</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-service-detail">
+        <div class="container">
+            <h1>Réparation Dégâts des Eaux</h1>
+            <p>Intervention d'urgence, localisation de fuites, asséchage, restauration complète. Experts en sinistres depuis 10 ans.</p>
+            <div class="hero-service-cta">
+                <a href="tel:+33688483403" class="btn btn-primary btn-large">📞 Urgence : 06 88 48 34 03</a>
+                <a href="/devis-gratuit/" class="btn btn-secondary btn-large">Devis gratuit</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-intro-section">
+        <div class="service-intro-container">
+            <div class="service-intro-text">
+                <h2>Experts en Dégâts des Eaux</h2>
+                <p>Un dégât des eaux est toujours une situation stressante qui nécessite une intervention rapide pour limiter les dommages. Notre équipe intervient en urgence pour stopper la fuite, assécher les zones touchées et restaurer votre intérieur.</p>
+                <p>Nous gérons l'intégralité du processus : détection de la fuite, asséchage professionnel, démontage des éléments endommagés, traitement anti-moisissures et remise en état complète avec finitions.</p>
+                <p>Nous travaillons en coordination avec votre assurance pour faciliter les démarches et garantir une prise en charge optimale de votre sinistre.</p>
+            </div>
+            <div class="service-intro-image">
+                <div class="service-intro-image-placeholder">💧</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-details-section">
+        <div class="service-details-container">
+            <div class="service-details-grid">
+                <div class="service-detail-card">
+                    <h3>🚨 Intervention d'Urgence</h3>
+                    <p>Réactivité maximale en cas de sinistre.</p>
+                    <ul>
+                        <li>Appel d'urgence 24/7</li>
+                        <li>Intervention rapide</li>
+                        <li>Arrêt de la fuite</li>
+                        <li>Sécurisation des lieux</li>
+                        <li>Limitation des dégâts</li>
+                        <li>Conseil immédiat</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>💧 Asséchage & Traitement</h3>
+                    <p>Séchage professionnel des zones humides.</p>
+                    <ul>
+                        <li>Assécheurs professionnels</li>
+                        <li>Déshumidification</li>
+                        <li>Ventilation forcée</li>
+                        <li>Contrôle de l'humidité</li>
+                        <li>Traitement anti-moisissures</li>
+                        <li>Assainissement complet</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🔧 Réparations</h3>
+                    <p>Remise en état de tous les éléments endommagés.</p>
+                    <ul>
+                        <li>Dépose éléments abîmés</li>
+                        <li>Réparation des structures</li>
+                        <li>Remplacement cloisons</li>
+                        <li>Réfection plafonds</li>
+                        <li>Travaux de plomberie</li>
+                        <li>Coordination artisans</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🎨 Finitions</h3>
+                    <p>Remise en état esthétique complète.</p>
+                    <ul>
+                        <li>Peintures de finition</li>
+                        <li>Revêtements muraux</li>
+                        <li>Revêtements de sols</li>
+                        <li>Plinthes et joints</li>
+                        <li>Nettoyage final</li>
+                        <li>Comme neuf</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-gallery-section">
+        <div class="service-gallery-container">
+            <h2>Nos Interventions Dégâts des Eaux</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">💧</div>
+                    <div class="service-gallery-overlay"><h4>Avant intervention</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">💧</div>
+                    <div class="service-gallery-overlay"><h4>Asséchage</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">💧</div>
+                    <div class="service-gallery-overlay"><h4>Réparations</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">💧</div>
+                    <div class="service-gallery-overlay"><h4>Finitions</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">💧</div>
+                    <div class="service-gallery-overlay"><h4>Résultat final</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">💧</div>
+                    <div class="service-gallery-overlay"><h4>Remise en état</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-process-section">
+        <div class="service-process-container">
+            <h2>Notre Processus d'Intervention</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-number">1</div>
+                    <h3>Urgence</h3>
+                    <p>Intervention rapide, arrêt de la fuite, sécurisation, photos pour assurance.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">2</div>
+                    <h3>Asséchage</h3>
+                    <p>Mise en place d'assécheurs, contrôle quotidien de l'humidité jusqu'à séchage complet.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">3</div>
+                    <h3>Réparation</h3>
+                    <p>Démontage éléments abîmés, traitement, reconstruction et travaux de remise en état.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">4</div>
+                    <h3>Finitions</h3>
+                    <p>Peintures, sols, nettoyage complet et restitution des lieux comme neufs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-faq-section">
+        <div class="service-faq-container">
+            <h2>Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="1">
+                        <span>Que faire en cas de dégât des eaux ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-1">
+                        <p>1) Couper l'eau si possible. 2) Couper l'électricité dans les zones touchées. 3) Déplacer les objets de valeur. 4) Appeler votre assurance. 5) Nous contacter immédiatement au 06 88 48 34 03.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="2">
+                        <span>Combien de temps dure l'asséchage ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-2">
+                        <p>Entre 3 et 15 jours selon l'ampleur du sinistre, les matériaux touchés et les conditions. Nous contrôlons l'humidité quotidiennement jusqu'au séchage complet.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="3">
+                        <span>L'assurance prend-elle en charge ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-3">
+                        <p>Généralement oui si vous avez une assurance habitation multirisque. Nous établissons un devis détaillé que vous transmettez à votre assureur. Déclarez le sinistre sous 5 jours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="4">
+                        <span>Peut-on rester dans le logement ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-4">
+                        <p>Cela dépend de l'ampleur. Pour un dégât mineur localisé : oui. Pour un dégât important : un relogement temporaire peut être nécessaire. Votre assurance peut prendre en charge l'hébergement.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="5">
+                        <span>Comment éviter les moisissures ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-5">
+                        <p>Agir vite ! L'asséchage rapide et le traitement anti-moisissures évitent leur développement. C'est pourquoi notre intervention d'urgence est cruciale dans les premières 24-48h.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-cta-section">
+        <div class="container">
+            <h2>Dégât des Eaux en Cours ?</h2>
+            <p>Appelez-nous immédiatement pour une intervention rapide et limiter les dégâts</p>
+            <a href="tel:+33688483403" class="btn btn-primary btn-large">📞 Appel Urgence : 06 88 48 34 03</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ER RÉNOVATION</h4>
+                    <p>Votre expert en rénovation à Passy, Haute-Savoie</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61556789047369" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/maconnerie-platerie/">Maçonnerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Dégâts des eaux</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Zones d'intervention</h4>
+                    <ul>
+                        <li><a href="/zones-intervention/renovation-passy/">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix/">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve/">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches/">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais/">Saint-Gervais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33688483403">06 88 48 34 03</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:errenovation74190@gmail.com">errenovation74190@gmail.com</a></p>
+                    <p><strong>Adresse :</strong><br>481 avenue de Chamonix<br>74190 Passy</p>
+                    <p><strong>Horaires :</strong><br>Lun-Sam : 8h-19h30<br>Dimanche : Fermé</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ER Rénovation - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <span>•</span>
+                    <a href="/#contact">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
