@@ -1,1 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pose de revêtements muraux à Passy : papiers peints, enduits décoratifs, carrelage mural. Devis gratuit sous 48h.">
+    <meta name="keywords" content="papier peint, revêtement mural, carrelage mural, enduit décoratif, Passy, Haute-Savoie">
+    <meta name="author" content="ER Rénovation">
+    
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .hero-service-detail { background: linear-gradient(135deg, #1e3a5f 0%, #2a4d7a 100%); color: var(--white); padding: 80px 20px; text-align: center; }
+        .hero-service-detail h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .hero-service-detail p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto 2rem; }
+        .hero-service-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .service-intro-section { padding: 60px 20px; background: var(--white); }
+        .service-intro-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
+        .service-intro-text h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem; }
+        .service-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
+        .service-intro-image { background: var(--light); border-radius: var(--radius); padding: 2rem; min-height: 350px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
+        .service-intro-image-placeholder { font-size: 5rem; }
+        .service-details-section { padding: 80px 20px; background: var(--light); }
+        .service-details-container { max-width: 1200px; margin: 0 auto; }
+        .service-details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+        .service-detail-card { background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow); border-top: 4px solid #1e3a5f; }
+        .service-detail-card h3 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.4rem; }
+        .service-detail-card ul { list-style: none; padding: 0; }
+        .service-detail-card li { padding: 0.6rem 0; padding-left: 1.8rem; position: relative; color: #555; line-height: 1.6; }
+        .service-detail-card li:before { content: "✓"; position: absolute; left: 0; color: #1e3a5f; font-weight: bold; font-size: 1.2rem; }
+        .service-detail-card p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+        .service-gallery-section { padding: 80px 20px; background: var(--white); }
+        .service-gallery-container { max-width: 1200px; margin: 0 auto; }
+        .service-gallery-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .service-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .service-gallery-item { aspect-ratio: 1; background: var(--light); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; }
+        .service-gallery-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .service-gallery-placeholder { font-size: 3rem; opacity: 0.3; }
+        .service-gallery-overlay { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 1rem; text-align: center; }
+        .service-gallery-item:hover .service-gallery-overlay { opacity: 1; }
+        .service-gallery-overlay h4 { color: var(--white); font-size: 1.1rem; }
+        .service-process-section { padding: 80px 20px; background: var(--light); }
+        .service-process-container { max-width: 1200px; margin: 0 auto; }
+        .service-process-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .process-step { text-align: center; padding: 2rem; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); position: relative; }
+        .process-step-number { width: 50px; height: 50px; background: #1e3a5f; color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1.5rem; }
+        .process-step h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem; }
+        .process-step p { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; }
+        .service-faq-section { padding: 80px 20px; background: var(--white); }
+        .service-faq-container { max-width: 900px; margin: 0 auto; }
+        .service-faq-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .service-cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .service-cta-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .service-cta-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
+        @media (max-width: 1024px) { .service-intro-container, .service-details-grid { grid-template-columns: 1fr; } .process-steps, .service-gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .hero-service-detail h1 { font-size: 2rem; } .hero-service-cta { flex-direction: column; } .process-steps, .service-gallery-grid { grid-template-columns: 1fr; } }
+    </style>
+    <title>Revêtements Muraux - ER Rénovation Passy</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="../../images/logo.png" alt="ER Rénovation Logo" class="logo-img">
+                <span class="logo-text">ER RÉNOVATION</span>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/services/" class="nav-link">Services</a></li>
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/zones-intervention/" class="nav-link">Zones d'intervention</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <section class="hero-service-detail">
+        <div class="container">
+            <h1>Revêtements Muraux</h1>
+            <p>Papiers peints, enduits décoratifs, carrelage mural : créez une ambiance unique dans vos espaces.</p>
+            <div class="hero-service-cta">
+                <a href="/devis-gratuit/" class="btn btn-primary btn-large">Devis gratuit</a>
+                <a href="tel:+33688483403" class="btn btn-secondary btn-large">06 88 48 34 03</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-intro-section">
+        <div class="service-intro-container">
+            <div class="service-intro-text">
+                <h2>Habillez Vos Murs avec Style</h2>
+                <p>Les revêtements muraux offrent des possibilités infinies pour personnaliser votre intérieur. Du papier peint tendance aux enduits texturés, en passant par le carrelage design, nous proposons une large gamme de solutions.</p>
+                <p>Notre équipe maîtrise toutes les techniques de pose : papiers peints intissés, vinyles, enduits décoratifs, faïence murale. Nous intervenons dans les pièces à vivre, chambres, cuisines et salles de bains.</p>
+                <p>Conseils déco, choix des matériaux, pose professionnelle : nous vous accompagnons de A à Z pour un résultat à la hauteur de vos attentes.</p>
+            </div>
+            <div class="service-intro-image">
+                <div class="service-intro-image-placeholder">🖼️</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-details-section">
+        <div class="service-details-container">
+            <div class="service-details-grid">
+                <div class="service-detail-card">
+                    <h3>📰 Papiers Peints</h3>
+                    <p>Tous types de papiers peints pour transformer vos murs.</p>
+                    <ul>
+                        <li>Papiers peints intissés (facile à poser)</li>
+                        <li>Papiers peints vinyles (lavables)</li>
+                        <li>Papiers peints panoramiques</li>
+                        <li>Papiers peints texturés et relief</li>
+                        <li>Conseils couleurs et motifs</li>
+                        <li>Dépose de l'ancien papier peint</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🎨 Enduits Décoratifs</h3>
+                    <p>Enduits texturés pour un rendu unique et élégant.</p>
+                    <ul>
+                        <li>Enduits à la chaux</li>
+                        <li>Enduits béton ciré</li>
+                        <li>Enduits tadelakt</li>
+                        <li>Enduits stucco</li>
+                        <li>Effets texturés personnalisés</li>
+                        <li>Finitions mates ou brillantes</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🔲 Carrelage Mural</h3>
+                    <p>Pose de faïence pour cuisines et salles de bains.</p>
+                    <ul>
+                        <li>Carrelage mural classique</li>
+                        <li>Carrelage métro</li>
+                        <li>Mosaïque murale</li>
+                        <li>Carrelage grand format</li>
+                        <li>Joints traditionnels ou époxy</li>
+                        <li>Crédences de cuisine</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🧱 Revêtements Modernes</h3>
+                    <p>Solutions contemporaines pour vos murs.</p>
+                    <ul>
+                        <li>Panneaux muraux PVC</li>
+                        <li>Lambris bois et PVC</li>
+                        <li>Plaquettes de parement</li>
+                        <li>Revêtements 3D</li>
+                        <li>Tissus muraux tendus</li>
+                        <li>Plaques décoratives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-gallery-section">
+        <div class="service-gallery-container">
+            <h2>Nos Réalisations en Revêtements Muraux</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🖼️</div>
+                    <div class="service-gallery-overlay"><h4>Papier peint salon</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🖼️</div>
+                    <div class="service-gallery-overlay"><h4>Carrelage SDB</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🖼️</div>
+                    <div class="service-gallery-overlay"><h4>Enduit texturé</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🖼️</div>
+                    <div class="service-gallery-overlay"><h4>Crédence cuisine</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🖼️</div>
+                    <div class="service-gallery-overlay"><h4>Parement pierre</h4></div>
+                </div>
+                <div class="service-gallery-item">
+                    <div class="service-gallery-placeholder">🖼️</div>
+                    <div class="service-gallery-overlay"><h4>Mosaïque</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-process-section">
+        <div class="service-process-container">
+            <h2>Notre Processus de Travail</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-number">1</div>
+                    <h3>Conseil & Devis</h3>
+                    <p>Conseils sur les matériaux, les tendances et établissement d'un devis détaillé gratuit.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">2</div>
+                    <h3>Préparation</h3>
+                    <p>Préparation des murs : dépose ancien revêtement, lissage, application primaire d'accroche.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">3</div>
+                    <h3>Pose</h3>
+                    <p>Application professionnelle du revêtement choisi avec respect des techniques de pose.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">4</div>
+                    <h3>Finitions</h3>
+                    <p>Finitions soignées, nettoyage du chantier et visite de réception avec vous.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-faq-section">
+        <div class="service-faq-container">
+            <h2>Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="1">
+                        <span>Quel type de papier peint choisir ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-1">
+                        <p>Intissé : facile à poser et à décoller. Vinyl : lavable, idéal cuisine/SDB. Traditionnel : plus économique. Panoramique : effet déco garanti. Nous vous conseillons selon votre pièce et budget.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="2">
+                        <span>Combien coûte la pose de papier peint ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-2">
+                        <p>En moyenne 25-40€/m² fourniture et pose comprises, selon le type de papier. Les panoramiques sont plus coûteux. Demandez un devis gratuit pour votre projet.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="3">
+                        <span>Peut-on poser du papier peint sur du carrelage ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-3">
+                        <p>Non, il faut d'abord recouvrir le carrelage d'un enduit de lissage ou de plaques de plâtre pour obtenir une surface plane et adhérente.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="4">
+                        <span>Quelle durée de vie pour les revêtements muraux ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-4">
+                        <p>Papier peint : 5-10 ans. Carrelage : 20-30 ans. Enduits : 10-20 ans. La durée dépend de l'entretien et de l'exposition à l'humidité.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="5">
+                        <span>Pouvez-vous retirer l'ancien papier peint ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-5">
+                        <p>Oui, nous assurons la dépose complète de l'ancien revêtement et la préparation des murs avant la pose du nouveau revêtement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-cta-section">
+        <div class="container">
+            <h2>Envie de Transformer Vos Murs ?</h2>
+            <p>Contactez-nous pour un devis gratuit et des conseils personnalisés</p>
+            <a href="/devis-gratuit/" class="btn btn-primary btn-large">Demander un devis</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ER RÉNOVATION</h4>
+                    <p>Votre expert en rénovation à Passy, Haute-Savoie</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61556789047369" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/maconnerie-platerie/">Maçonnerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Dégâts des eaux</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Zones d'intervention</h4>
+                    <ul>
+                        <li><a href="/zones-intervention/renovation-passy/">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix/">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve/">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches/">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais/">Saint-Gervais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33688483403">06 88 48 34 03</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:errenovation74190@gmail.com">errenovation74190@gmail.com</a></p>
+                    <p><strong>Adresse :</strong><br>481 avenue de Chamonix<br>74190 Passy</p>
+                    <p><strong>Horaires :</strong><br>Lun-Sam : 8h-19h30<br>Dimanche : Fermé</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ER Rénovation - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <span>•</span>
+                    <a href="/#contact">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
