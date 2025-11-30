@@ -1,0 +1,6 @@
+# Exclusion des chemins qui ne sont pas utiles au référencement
+User-agent: *
+Disallow: /images/
+
+# Indiquez l'emplacement de votre plan du site
+Sitemap: https://er-renovation.com/sitemap.xml
