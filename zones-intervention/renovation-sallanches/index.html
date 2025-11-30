@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entreprise de rénovation à Sallanches : tous types de travaux, petits et grands projets. Artisan local depuis 10 ans. Devis gratuit.">
+    <meta name="keywords" content="rénovation Sallanches, entreprise rénovation Sallanches, artisan Sallanches, travaux Sallanches 74700">
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .hero-zone { background: linear-gradient(135deg, #ff6b35 0%, #ff5a22 100%); color: var(--white); padding: 80px 20px; text-align: center; }
+        .hero-zone h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .hero-zone p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto 2rem; }
+        .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .zone-intro { padding: 60px 20px; background: var(--white); }
+        .zone-intro-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
+        .zone-intro-text h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem; }
+        .zone-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
+        .zone-stats { background: var(--light); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+        .zone-stat-item { margin-bottom: 1.5rem; }
+        .zone-stat-item:last-child { margin-bottom: 0; }
+        .zone-stat-label { font-weight: 600; color: var(--primary); margin-bottom: 0.5rem; }
+        .zone-stat-value { color: #666; font-size: 0.95rem; }
+        .services-local { padding: 80px 20px; background: var(--light); }
+        .services-local-container { max-width: 1200px; margin: 0 auto; }
+        .services-local h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .services-local-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .service-local-card { background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; transition: all 0.3s ease; border-top: 4px solid #ff6b35; }
+        .service-local-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .service-local-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .service-local-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .service-local-card p { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+        .secteurs { padding: 80px 20px; background: var(--white); }
+        .secteurs-container { max-width: 1200px; margin: 0 auto; }
+        .secteurs h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .secteurs-list { columns: 3; gap: 2rem; }
+        .secteur-item { background: var(--light); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; break-inside: avoid; border-left: 3px solid #ff6b35; }
+        .secteur-item h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1rem; }
+        .secteur-item p { color: #666; font-size: 0.85rem; margin-bottom: 0; }
+        .cta-zone { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .cta-zone h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .cta-zone p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
+        @media (max-width: 1024px) { .zone-intro-container { grid-template-columns: 1fr; } .services-local-grid { grid-template-columns: repeat(2, 1fr); } .secteurs-list { columns: 2; } }
+        @media (max-width: 768px) { .hero-zone h1 { font-size: 2rem; } .services-local-grid, .secteurs-list { grid-template-columns: 1fr; columns: 1; } }
+    </style>
+    <title>Rénovation à Sallanches 74700 - ER Rénovation</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="../../images/logo.png" alt="ER Rénovation Logo" class="logo-img">
+                <span class="logo-text">ER RÉNOVATION</span>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/services/" class="nav-link">Services</a></li>
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/zones-intervention/" class="nav-link">Zones d'intervention</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <section class="hero-zone">
+        <div class="container">
+            <h1>Entreprise de Rénovation à Sallanches</h1>
+            <p>Tous types de projets de rénovation : du rafraîchissement à la rénovation complète. Votre artisan polyvalent à proximité.</p>
+            <div class="hero-cta">
+                <a href="/devis-gratuit/" class="btn btn-primary btn-large">Devis gratuit</a>
+                <a href="tel:+33688483403" class="btn btn-secondary btn-large">06 88 48 34 03</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="zone-intro">
+        <div class="zone-intro-container">
+            <div class="zone-intro-text">
+                <h2>Votre Artisan à Sallanches</h2>
+                <p>À quelques kilomètres seulement de notre siège à Passy, Sallanches est une zone d'intervention privilégiée. Nous y réalisons régulièrement tous types de travaux de rénovation pour particuliers et professionnels.</p>
+                <p>De la simple réparation au projet de rénovation complète, nous adaptons nos interventions à tous les budgets. Notre proximité nous permet d'assurer un suivi de chantier optimal et une réactivité appréciée de nos clients.</p>
+                <p>Appartements en centre-ville, maisons individuelles dans les quartiers résidentiels, locaux commerciaux : nous intervenons partout à Sallanches avec le même engagement qualité.</p>
+            </div>
+            <div class="zone-stats">
+                <div class="zone-stat-item">
+                    <div class="zone-stat-label">📍 Distance depuis Passy</div>
+                    <div class="zone-stat-value">8 km - 10 minutes</div>
+                </div>
+                <div class="zone-stat-item">
+                    <div class="zone-stat-label">📋 Devis</div>
+                    <div class="zone-stat-value">Gratuit sous 48h</div>
+                </div>
+                <div class="zone-stat-item">
+                    <div class="zone-stat-label">🏗️ Chantiers réalisés</div>
+                    <div class="zone-stat-value">50+ projets à Sallanches</div>
+                </div>
+                <div class="zone-stat-item">
+                    <div class="zone-stat-label">💼 Spécialité</div>
+                    <div class="zone-stat-value">Tous types de projets</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-local">
+        <div class="services-local-container">
+            <h2>Nos Services à Sallanches</h2>
+            <div class="services-local-grid">
+                <div class="service-local-card">
+                    <div class="service-local-icon">🎨</div>
+                    <h3>Peinture</h3>
+                    <p>Intérieure et extérieure, rafraîchissement ou rénovation complète et ravalement de façade</p>
+                    <a href="/services/peinture-interieure-exterieure/" class="btn btn-primary">En savoir plus</a>
+                </div>
+                <div class="service-local-card">
+                    <div class="service-local-icon">🖼️</div>
+                    <h3>Revêtements Muraux</h3>
+                    <p>Enduits, plâtre, faïence pour tous budgets</p>
+                    <a href="/services/revetements-muraux/" class="btn btn-primary">En savoir plus</a>
+                </div>
+                <div class="service-local-card">
+                    <div class="service-local-icon">⬇️</div>
+                    <h3>Revêtements Sols</h3>
+                    <p>Parquet, stratifié, solutions variées</p>
+                    <a href="/services/revetements-sols/" class="btn btn-primary">En savoir plus</a>
+                </div>
+                <div class="service-local-card">
+                    <div class="service-local-icon">🧱</div>
+                    <h3>Maçonnerie</h3>
+                    <p>Cloisons, enduits, petits travaux</p>
+                    <a href="/services/maconnerie-platerie/" class="btn btn-primary">En savoir plus</a>
+                </div>
+                <div class="service-local-card">
+                    <div class="service-local-icon">🚪</div>
+                    <h3>Menuiserie</h3>
+                    <p>Portes, placards, aménagements fonctionnels. Pose de cuisine.</p>
+                    <a href="/services/menuiserie/" class="btn btn-primary">En savoir plus</a>
+                </div>
+                <div class="service-local-card">
+                    <div class="service-local-icon">💧</div>
+                    <h3>Dégâts des Eaux</h3>
+                    <p>Intervention pour remise en état suite à un dégât des eaux</p>
+                    <a href="/services/reparation-degats-eaux/" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="secteurs">
+        <div class="secteurs-container">
+            <h2>Secteurs d'Intervention à Sallanches</h2>
+            <div class="secteurs-list">
+                <div class="secteur-item">
+                    <h4>Centre-ville</h4>
+                    <p>Commerces, immeubles, appartements anciens et récents</p>
+                </div>
+                <div class="secteur-item">
+                    <h4>Saint-Martin</h4>
+                    <p>Quartier résidentiel, maisons individuelles</p>
+                </div>
+                <div class="secteur-item">
+                    <h4>Les Bettières</h4>
+                    <p>Zone mixte, habitations et commerces</p>
+                </div>
+                <div class="secteur-item">
+                    <h4>Le Bouchet</h4>
+                    <p>Secteur calme, habitat pavillonnaire</p>
+                </div>
+                <div class="secteur-item">
+                    <h4>Zones d'activités</h4>
+                    <p>Locaux commerciaux et professionnels</p>
+                </div>
+                <div class="secteur-item">
+                    <h4>Toute la commune</h4>
+                    <p>Intervention dans tous quartiers de Sallanches</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-zone">
+        <div class="container">
+            <h2>Vous Habitez à Sallanches ?</h2>
+            <p>Profitez de notre proximité pour tous vos travaux. Petit budget ou grand projet : nous adaptons nos solutions.</p>
+            <a href="/devis-gratuit/" class="btn btn-primary btn-large">Demander un devis gratuit</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ER RÉNOVATION</h4>
+                    <p>Votre expert en rénovation à Passy, Haute-Savoie</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61556789047369" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/maconnerie-platerie/">Maçonnerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Dégâts des eaux</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Zones d'intervention</h4>
+                    <ul>
+                        <li><a href="/zones-intervention/renovation-passy/">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix/">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve/">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches/">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais/">Saint-Gervais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33688483403">06 88 48 34 03</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:errenovation74190@gmail.com">errenovation74190@gmail.com</a></p>
+                    <p><strong>Adresse :</strong><br>481 avenue de Chamonix<br>74190 Passy</p>
+                    <p><strong>Horaires :</strong><br>Lun-Sam : 8h-19h30<br>Dimanche : Fermé</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ER Rénovation - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <span>•</span>
+                    <a href="/#contact">Politique de confidentialité</a>
+                    <a href="https://wwww.duvaldvl.com">Site créé et édité par Duval DVL</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
