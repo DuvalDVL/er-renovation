@@ -33,14 +33,17 @@ const carouselDots = document.getElementById('carouselDots');
 
 // Créer les points du carrousel
 if (testimonialCards.length > 0) {
-    testimonialCards.forEach((_, index) => {
-        const dot = document.createElement('button');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.setAttribute('data-index', index);
-        dot.addEventListener('click', () => goToTestimonial(index));
-        carouselDots.appendChild(dot);
-    });
+    const carouselDotsEl = document.getElementById('carouselDots'); // Assurez-vous que cet ID existe dans votre HTML
+    if (carouselDotsEl) {
+        testimonialCards.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.setAttribute('data-index', index);
+            dot.addEventListener('click', () => goToTestimonial(index));
+            carouselDotsEl.appendChild(dot);
+        });
+    }
 
     // Fonction pour aller à un témoignage spécifique
     function goToTestimonial(index) {
@@ -96,17 +99,18 @@ faqQuestions.forEach(question => {
         const faqAnswer = faqItem.querySelector('.faq-answer');
         const isOpen = question.classList.contains('active');
 
-        // Fermer tous les autres éléments
+        // Fermer tous les autres éléments (mode accordéon exclusif)
         document.querySelectorAll('.faq-question').forEach(q => {
             if (q !== question) {
                 q.classList.remove('active');
-                q.parentElement.querySelector('.faq-answer').classList.remove('open');
+                const otherAnswer = q.parentElement.querySelector('.faq-answer');
+                if (otherAnswer) otherAnswer.classList.remove('open');
             }
         });
 
         // Toggle de l'élément actuel
         question.classList.toggle('active');
-        faqAnswer.classList.toggle('open');
+        if (faqAnswer) faqAnswer.classList.toggle('open');
     });
 });
 
@@ -190,18 +194,31 @@ function highlightNavLink() {
 
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
+        // Gère les liens vers la page elle-même (ex: /#services -> services)
+        let linkHref = link.getAttribute('href');
+        // Supprime le premier '/' s'il existe et vérifie si le lien correspond à l'ID de la section
+        if (linkHref.startsWith('/')) {
+            linkHref = linkHref.slice(1);
+        }
+        if (linkHref.slice(1) === current) { // linkHref.slice(1) enlève le '#'
             link.classList.add('active');
+        }
+        // Gère le cas où le lien est vers la page d'accueil (ex: /)
+        if (current === '' && linkHref === '/') { 
+             link.classList.add('active');
         }
     });
 }
 
 window.addEventListener('scroll', highlightNavLink);
 
-// ========================
-// FORMULAIRE CONTACT
-// ========================
-
+// ==========================================================
+// FORMULAIRE CONTACT - SECTION COMMENTÉE POUR ÉVITER LE CONFLIT
+// avec le formulaire de devis plus complexe dans le HTML.
+// Décommentez et adaptez cette section si vous avez un formulaire
+// de contact simple sur une autre page (ex: /contact.html)
+// ==========================================================
+/*
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
@@ -212,7 +229,10 @@ if (contactForm) {
             nom: document.getElementById('nom').value,
             telephone: document.getElementById('telephone').value,
             email: document.getElementById('email').value,
-            service: document.getElementById('service').value,
+            // ATTENTION: Les IDs 'service', 'ville', etc. doivent exister dans le HTML.
+            // Si cette page utilise des checkboxes (comme la page devis), 
+            // la logique ci-dessous doit être remplacée.
+            service: document.getElementById('service').value, 
             ville: document.getElementById('ville').value,
             message: document.getElementById('message').value,
             timestamp: new Date().toISOString()
@@ -232,7 +252,6 @@ if (contactForm) {
         }
 
         try {
-            // Option 1 : Utiliser Formspree (recommandé)
             const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
                 method: 'POST',
                 headers: {
@@ -253,6 +272,11 @@ if (contactForm) {
         }
     });
 }
+*/
+// ========================
+// FIN FORMULAIRE CONTACT
+// ========================
+
 
 // ========================
 // AFFICHAGE DE L'ANNÉE ACTUELLE
