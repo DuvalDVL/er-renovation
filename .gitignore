@@ -1,0 +1,10 @@
+# Fichiers et dossiers généraux
+.DS_Store
+Thumbs.db
+
+# Dépendances Node (si vous utilisez un outil de build, même simple)
+/node_modules
+
+# Fichiers de build ou temporaires (si vous minifiez le code)
+/dist
+/build
