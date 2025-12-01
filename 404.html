@@ -10,14 +10,20 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FWX8S7YRJ5"></script> 
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FWX8S7YRJ5'); </script>
     
-    <link rel="icon" type="image/png" href="./images/logo.png">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css"> 
+    
+    <link rel="stylesheet" href="/css/style.css"> 
+    
     <style>
-        /* Styles spécifiques pour le HERO 404 */
+        /* ========================
+           STYLES SPÉCIFIQUES 404
+           ======================== */
         .hero-404 {
+            /* Utilisation des variables définies dans style.css, qui est maintenant bien chargé */
             background: linear-gradient(135deg, var(--primary) 0%, #3a3a3a 100%);
             color: var(--white);
             padding: 80px 20px;
@@ -54,8 +60,6 @@
         .cta-404:hover {
             background: #d8572a; /* Une teinte plus foncée de l'accent */
         }
-        
-        /* Assurez-vous d'adapter ces chemins pour qu'ils fonctionnent depuis la racine (ex: /images/logo.png) */
     </style>
     
     <title>404 - Page non trouvée | ER Rénovation</title>
@@ -89,8 +93,8 @@
         <div class="container">
             <h1 class="hero-title-404"><span>404</span></h1>
             <p class="hero-subtitle-404">Oups ! La page que vous cherchez n'existe pas.</p>
-            <p>Elle a peut-être été déplacée ou l'adresse est incorrecte. Nous vous invitons à retourner à la page d'accueil ou à utiliser le menu ci-dessus.</p>
-            <a href="/" class="cta-404" style="margin-top: 1.5rem;">Retour à la page d'accueil</a>
+            <p style="margin-bottom: 2rem;">Elle a peut-être été déplacée ou l'adresse est incorrecte. Nous vous invitons à retourner à la page d'accueil ou à utiliser le menu ci-dessus.</p>
+            <a href="/" class="cta-404">Retour à la page d'accueil</a>
         </div>
     </section>
     
@@ -154,7 +158,6 @@
         </div>
     </footer>
 
-    <script src="./js/main.js"></script>
-    
-    </body>
+    <script src="/js/main.js"></script>
+</body>
 </html>
