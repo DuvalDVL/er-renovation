@@ -78,7 +78,7 @@ p { font-size: 1rem; margin-bottom: 1rem; }
 }
 
 /* ========================
-   NAVIGATION
+   NAVIGATION (CORRIGÉ POUR L'ALIGNEMENT DESKTOP)
    ======================== */
 
 .navbar {
@@ -94,7 +94,8 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     margin: 0 auto;
     padding: 1rem 20px;
     display: flex;
-    justify-content: space-between;
+    /* Aligne les deux blocs (Logo et Menu) sur l'axe horizontal */
+    justify-content: space-between; 
     align-items: center;
 }
 
@@ -105,6 +106,8 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     font-weight: 800;
     color: var(--primary);
     text-decoration: none;
+    /* Assure que le logo est toujours visible sur desktop */
+    min-width: 150px; 
 }
 
 .logo-img {
@@ -123,6 +126,8 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     list-style: none;
     gap: 2rem;
     align-items: center;
+    /* Permet au menu de s'étendre à droite */
+    margin-left: auto; 
 }
 
 .nav-link {
@@ -812,7 +817,6 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
 }
 
 .footer-social a:hover {
@@ -884,7 +888,7 @@ p { font-size: 1rem; margin-bottom: 1rem; }
 }
 
 /* ========================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (CORRIGÉ POUR ÉVITER LES CONFLITS DESKTOP)
    ======================== */
 
 /* POINT DE RUPTURE DU MENU (tablette et mobile) */
@@ -894,23 +898,25 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.2rem; }
     
-    /* Force la navigation principale à s'adapter au mobile */
     .navbar-container {
-        padding: 0.8rem 20px; /* Réduire un peu le padding vertical */
+        padding: 0.8rem 20px; 
     }
 
     .nav-menu {
-        display: none; /* Cacher par défaut */
+        /* RETIRER margin-left: auto ! */
+        margin-left: 0;
+        
+        display: none; 
         position: absolute;
-        top: 60px; /* Ajuster en fonction du padding de .navbar-container */
+        top: 60px; 
         left: 0;
         right: 0;
         flex-direction: column;
-        background: var(--primary); /* Fond sombre pour la nav mobile */
+        background: var(--primary); 
         padding: 2rem;
-        gap: 0.5rem; /* Réduire l'espacement */
+        gap: 0.5rem; 
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        align-items: flex-start; /* Aligner les liens à gauche */
+        align-items: flex-start; 
     }
     
     .nav-menu.active {
@@ -932,25 +938,25 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     }
     
     .nav-menu li a.nav-link {
-        color: var(--white); /* Couleur des liens sur fond sombre */
+        color: var(--white); 
         padding: 10px 0;
-        display: block; /* Important pour que l'espace soit cliquable */
+        display: block; 
     }
     
     .nav-menu li a.nav-link::after {
-        display: none; /* Supprimer la ligne de survol */
+        display: none; 
     }
 
-    /* ********** GESTION DU DROPDOWN SUR MOBILE (CORRIGÉ) ********** */
+    /* ********** GESTION DU DROPDOWN SUR MOBILE ********** */
     
     .dropdown {
-        position: static; /* TRÈS IMPORTANT : Évite le positionnement absolu et l'écrasement */
+        position: static; 
         width: 100%;
     }
 
     .dropdown-content {
         position: static; 
-        display: none; /* Géré par JS */
+        display: none; 
         box-shadow: none;
         background-color: transparent; 
         border-radius: 0;
@@ -962,7 +968,7 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     .dropdown-content li a {
         color: rgba(255, 255, 255, 0.8); 
         border-bottom: none;
-        padding: 5px 0 5px 10px; /* Petit décalage supplémentaire */
+        padding: 5px 0 5px 10px; 
         font-size: 0.9rem;
     }
 
@@ -978,7 +984,7 @@ p { font-size: 1rem; margin-bottom: 1rem; }
         font-size: 1rem;
         font-weight: 700;
         float: right; 
-        transition: none; /* Désactiver la transition pour le 'plus/moins' */
+        transition: none; 
     }
     
     .dropdown-toggle.active::after {
