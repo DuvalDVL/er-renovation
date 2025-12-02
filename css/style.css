@@ -454,16 +454,20 @@ p { font-size: 1rem; margin-bottom: 1rem; }
 .service-image {
     width: 100%;
     height: 200px;
+    /* Ce dégradé est le placeholder par défaut. Il sera surchargé ci-dessous. */
     background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
     position: relative;
     overflow: hidden;
+    background-size: cover; /* Ajouté pour bien couvrir l'espace */
+    background-position: center; /* Ajouté pour centrer l'image */
 }
 
 .service-image::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 107, 53, 0.1);
+    /* J'ai rendu ce filtre transparent pour que vos images soient visibles. */
+    background: rgba(0, 0, 0, 0); 
 }
 
 .service-card h3 {
@@ -498,6 +502,35 @@ p { font-size: 1rem; margin-bottom: 1rem; }
 .services-cta p {
     color: #666;
     margin-bottom: 1.5rem;
+}
+
+/* =======================================================
+   RÈGLES D'IMAGES SPÉCIFIQUES POUR LES SERVICES (AJOUTÉES)
+   C'EST ICI QUE VOUS METTEZ VOS PROPRES IMAGES
+   ======================================================= */
+
+.service-image.peinture {
+    background-image: url('../images/peinture.jpg'); 
+}
+
+.service-image.revetements {
+    background-image: url('../images/revetements.jpg'); 
+}
+
+.service-image.sols {
+    background-image: url('../images/sols.jpg'); 
+}
+
+.service-image.maconnerie {
+    background-image: url('../images/maconnerie.jpg'); 
+}
+
+.service-image.menuiserie {
+    background-image: url('../images/menuiserie.jpg'); 
+}
+
+.service-image.degats {
+    background-image: url('../images/degats.jpg'); 
 }
 
 /* ========================
