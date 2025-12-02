@@ -24,6 +24,17 @@
         .service-intro-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
         .service-intro-text h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem; }
         .service-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
+
+                /* MODIFIÉ : Image réelle au lieu du placeholder */
+        .service-intro-image { 
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius); 
+            min-height: 350px; 
+            box-shadow: var(--shadow);
+            background-image: url('../../images/maconnerie.jpg');
+        }
+        
         .service-intro-image { background: var(--light); border-radius: var(--radius); padding: 2rem; min-height: 350px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
         .service-intro-image-placeholder { font-size: 5rem; }
         .service-details-section { padding: 80px 20px; background: var(--light); }
@@ -126,8 +137,6 @@
                 <p>Installation de menuiseries, ajustements, réparations : notre expertise couvre tous les aspects de la menuiserie intérieure pour votre confort et votre satisfaction.</p>
             </div>
             <div class="service-intro-image">
-                <div class="service-intro-image-placeholder">🚪</div>
-            </div>
         </div>
     </section>
 
@@ -192,28 +201,34 @@
             <h2>Nos Réalisations en Menuiserie</h2>
             <div class="service-gallery-grid">
                 <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🚪</div>
-                    <div class="service-gallery-overlay"><h4>Porte sur mesure</h4></div>
+                <!-- Image 1 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/menuiserie-main-courante.jpg');">
+                    <div class="service-gallery-overlay"><h4>Remplacement main courante</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🚪</div>
-                    <div class="service-gallery-overlay"><h4>Placard intégré</h4></div>
+                
+                <!-- Image 2 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/menuiserie-lambris.jpg');">
+                    <div class="service-gallery-overlay"><h4>Pose de lambris</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🚪</div>
-                    <div class="service-gallery-overlay"><h4>Bibliothèque</h4></div>
+                
+                <!-- Image 3 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/menuiserie-balcon.jpg');">
+                    <div class="service-gallery-overlay"><h4>Création d'un balcon</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🚪</div>
-                    <div class="service-gallery-overlay"><h4>Porte coulissante</h4></div>
+                
+                <!-- Image 4 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/menuiserie-placard.jpg');">
+                    <div class="service-gallery-overlay"><h4>Placard sur mesure</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🚪</div>
-                    <div class="service-gallery-overlay"><h4>Dressing sur mesure</h4></div>
+                
+                <!-- Image 5 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/menuiserie-porte.jpg');">
+                    <div class="service-gallery-overlay"><h4>Pose de porte</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🚪</div>
-                    <div class="service-gallery-overlay"><h4>Restauration</h4></div>
+                
+                <!-- Image 6 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/menuiserie-lambris-ancien.jpg');">
+                    <div class="service-gallery-overlay"><h4>Pose de lambris ancien</h4></div>
                 </div>
             </div>
         </div>
