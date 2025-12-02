@@ -963,7 +963,8 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     .logo-text {
         display: inline;
     }
-    
+
+  
     /* Styles pour les liens dans le menu mobile */
     .nav-menu li {
         width: 100%; 
