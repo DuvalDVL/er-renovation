@@ -10,7 +10,7 @@
     <meta property="og:description" content="Découvrez tous nos services de rénovation professionnels">
     <meta property="og:type" content="website">
 
-        <!-- Google Analytics -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FWX8S7YRJ5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -89,15 +89,38 @@
             box-shadow: var(--shadow-hover);
         }
 
+        /* MODIFIÉ : Image réelle au lieu de l'icône */
         .service-card-icon {
-            font-size: 3rem;
-            padding: 2rem;
-            text-align: center;
-            background: var(--light);
+            width: 100%;
             height: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Classes pour les images de la grille overview */
+        .service-overview-card .service-card-icon.peinture {
+            background-image: url('../images/peinture.jpg');
+        }
+
+        .service-overview-card .service-card-icon.revetements {
+            background-image: url('../images/revetements.jpg');
+        }
+
+        .service-overview-card .service-card-icon.sols {
+            background-image: url('../images/sols.jpg');
+        }
+
+        .service-overview-card .service-card-icon.maconnerie {
+            background-image: url('../images/maconnerie.jpg');
+        }
+
+        .service-overview-card .service-card-icon.menuiserie {
+            background-image: url('../images/menuiserie.jpg');
+        }
+
+        .service-overview-card .service-card-icon.degats {
+            background-image: url('../images/degats.jpg');
         }
 
         .service-overview-card h3 {
@@ -151,20 +174,15 @@
             align-items: start;
         }
 
+        /* MODIFIÉ : Image réelle au lieu de SVG */
         .service-detail-image {
             width: 100%;
             height: 300px;
-            background: linear-gradient(135deg, var(--light) 0%, #e0e0e0 100%);
+            background-size: cover;
+            background-position: center;
             border-radius: var(--radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-        }
-
-        .service-detail-image svg {
-            width: 100%;
-            height: 100%;
+            box-shadow: var(--shadow);
         }
 
         .service-detail-content h3 {
@@ -279,46 +297,51 @@
 </head>
 <body>
     <!-- Navigation -->
-<nav class="navbar">
-    <div class="navbar-container">
-        <button class="mobile-toggle" id="mobileToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <ul class="nav-menu" id="navMenu">
-            <li><a href="/" class="nav-link">Accueil</a></li>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="logo">
+                <img src="../images/logo.png" alt="ER Rénovation" class="logo-img">
+                <span class="logo-text">ER RÉNOVATION</span>
+            </a>
             
-            <li class="dropdown">
-                <a href="/services/" class="nav-link dropdown-toggle">Services</a>
-                <ul class="dropdown-content">
-                    <li><a href="/services/peinture-interieure-exterieure/">Peinture intérieure / extérieure</a></li>
-                    <li><a href="/services/maconnerie-platrerie/">Maçonnerie / Plâtrerie</a></li>
-                    <li><a href="/services/menuiserie/">Menuiserie</a></li>
-                    <li><a href="/services/reparation-degats-eaux/">Réparation de dégâts des eaux</a></li>
-                    <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
-                    <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
-                </ul>
-            </li>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                
+                <li class="dropdown">
+                    <a href="/services/" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture intérieure / extérieure</a></li>
+                        <li><a href="/services/maconnerie-platrerie/">Maçonnerie / Plâtrerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Réparation de dégâts des eaux</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                    </ul>
+                </li>
 
-            <li class="dropdown">
-                <a href="/#zones" class="nav-link dropdown-toggle">Zones d'intervention</a>
-                <ul class="dropdown-content">
-                    <li><a href="/zones-intervention/renovation-passy">Passy</a></li>
-                    <li><a href="/zones-intervention/renovation-chamonix">Chamonix</a></li>
-                    <li><a href="/zones-intervention/renovation-megeve">Megève</a></li>
-                    <li><a href="/zones-intervention/renovation-sallanches">Sallanches</a></li>
-                    <li><a href="/zones-intervention/renovation-saint-gervais">Saint-Gervais</a></li>
-                </ul>
-            </li>
-            
-            <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
-            <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
-            <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
-        </ul>
-    </div>
-</nav>
+                <li class="dropdown">
+                    <a href="/#zones" class="nav-link dropdown-toggle">Zones d'intervention</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/zones-intervention/renovation-passy">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais">Saint-Gervais</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Hero Section Services -->
     <section class="hero-service">
@@ -335,7 +358,7 @@
                 
                 <!-- Service 1 -->
                 <div class="service-overview-card">
-                    <div class="service-card-icon">🎨</div>
+                    <div class="service-card-icon peinture"></div>
                     <h3>Peinture Intérieure et Extérieure</h3>
                     <p>Transformez vos espaces avec des peintures de qualité et des finitions impeccables.</p>
                     <a href="#peinture" class="btn btn-primary">Découvrir</a>
@@ -343,7 +366,7 @@
 
                 <!-- Service 2 -->
                 <div class="service-overview-card">
-                    <div class="service-card-icon">🖼️</div>
+                    <div class="service-card-icon revetements"></div>
                     <h3>Revêtements Muraux</h3>
                     <p>Enduit lisse, plâtre et carrelage mural pour créer une ambiance unique.</p>
                     <a href="#revetements-muraux" class="btn btn-primary">Découvrir</a>
@@ -351,7 +374,7 @@
 
                 <!-- Service 3 -->
                 <div class="service-overview-card">
-                    <div class="service-card-icon">⬇️</div>
+                    <div class="service-card-icon sols"></div>
                     <h3>Revêtements de Sols</h3>
                     <p>Sols souples : stratifié, vinyl - tous types de sols posés avec précision.</p>
                     <a href="#revetements-sols" class="btn btn-primary">Découvrir</a>
@@ -359,7 +382,7 @@
 
                 <!-- Service 4 -->
                 <div class="service-overview-card">
-                    <div class="service-card-icon">🧱</div>
+                    <div class="service-card-icon maconnerie"></div>
                     <h3>Maçonnerie et Plâtrerie</h3>
                     <p>Construction, cloisons, enduits de finition et petits travaux de maçonnerie.</p>
                     <a href="#maconnerie" class="btn btn-primary">Découvrir</a>
@@ -367,7 +390,7 @@
 
                 <!-- Service 5 -->
                 <div class="service-overview-card">
-                    <div class="service-card-icon">🚪</div>
+                    <div class="service-card-icon menuiserie"></div>
                     <h3>Menuiserie</h3>
                     <p>Installation et restauration de menuiseries.</p>
                     <a href="#menuiserie" class="btn btn-primary">Découvrir</a>
@@ -375,7 +398,7 @@
 
                 <!-- Service 6 -->
                 <div class="service-overview-card">
-                    <div class="service-card-icon">💧</div>
+                    <div class="service-card-icon degats"></div>
                     <h3>Réparation Dégâts des Eaux</h3>
                     <p>Réparation et restauration.</p>
                     <a href="#degats-eaux" class="btn btn-primary">Découvrir</a>
@@ -392,13 +415,7 @@
 
             <!-- Peinture -->
             <div class="service-detail-full" id="peinture">
-                <div class="service-image peinture">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#f5f5f5"/>
-                        <rect x="50" y="80" width="300" height="150" fill="#ff6b35" opacity="0.3"/>
-                        <text x="200" y="160" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Peinture</text>
-                    </svg>
-                </div>
+                <div class="service-detail-image" style="background-image: url('../images/peinture.jpg');"></div>
                 <div class="service-detail-content">
                     <h3><a href="/services/peinture-interieure-exterieure">Peinture Intérieure et Extérieure</a></h3>
                     <p class="service-detail-intro">Nous transformons vos espaces avec des peintures de qualité professionnelle et des finitions impeccables. De la préparation des surfaces à l'application finale, chaque détail compte.</p>
@@ -422,13 +439,7 @@
 
             <!-- Revêtements Muraux -->
             <div class="service-detail-full" id="revetements-muraux">
-                <div class="service-detail-image">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#f5f5f5"/>
-                        <rect x="80" y="100" width="240" height="120" fill="#1e3a5f" opacity="0.3"/>
-                        <text x="200" y="160" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Revêtements</text>
-                    </svg>
-                </div>
+                <div class="service-detail-image" style="background-image: url('../images/revetements.jpg');"></div>
                 <div class="service-detail-content">
                     <h3><a href="/services/revetements-muraux">Revêtements Muraux</a></h3>
                     <p class="service-detail-intro">Enduits, plâtre ou carrelage mural design : nous proposons une large gamme de solutions pour habiller vos murs et créer une ambiance unique.</p>
@@ -450,13 +461,7 @@
 
             <!-- Revêtements Sols -->
             <div class="service-detail-full" id="revetements-sols">
-                <div class="service-detail-image">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#f5f5f5"/>
-                        <rect x="60" y="120" width="280" height="100" fill="#d4af37" opacity="0.3"/>
-                        <text x="200" y="170" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Revêtements</text>
-                    </svg>
-                </div>
+                <div class="service-detail-image" style="background-image: url('../images/sols.jpg');"></div>
                 <div class="service-detail-content">
                     <h3><a href="/services/revetements-sols">Revêtements de Sols</a></h3>
                     <p class="service-detail-intro">Du sol souple en stratifié durable, en passant par le vinyl tendance : nous posons tous types de revêtements de sol avec précision et professionnalisme.</p>
@@ -479,13 +484,7 @@
 
             <!-- Maçonnerie -->
             <div class="service-detail-full" id="maconnerie">
-                <div class="service-detail-image">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#f5f5f5"/>
-                        <rect x="70" y="90" width="260" height="140" fill="#ff6b35" opacity="0.2"/>
-                        <text x="200" y="160" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Maçonnerie</text>
-                    </svg>
-                </div>
+                <div class="service-detail-image" style="background-image: url('../images/maconnerie.jpg');"></div>
                 <div class="service-detail-content">
                     <h3><a href="/services/maconnerie-platrerie">Maçonnerie et Plâtrerie</a></h3>
                     <p class="service-detail-intro">Travaux de maçonnerie, enduits de finition ou réparations : nos artisans maîtrisent tous les aspects de la plâtrerie et maçonnerie.</p>
@@ -509,13 +508,7 @@
 
             <!-- Menuiserie -->
             <div class="service-detail-full" id="menuiserie">
-                <div class="service-detail-image">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#f5f5f5"/>
-                        <rect x="90" y="100" width="220" height="130" fill="#1e3a5f" opacity="0.2"/>
-                        <text x="200" y="160" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Menuiserie</text>
-                    </svg>
-                </div>
+                <div class="service-detail-image" style="background-image: url('../images/menuiserie.jpg');"></div>
                 <div class="service-detail-content">
                     <h3><a href="/services/menuiserie">Menuiserie</a></h3>
                     <p class="service-detail-intro">Installation et restauration de menuiseries. Travail de précision et finitions soignées.</p>
@@ -537,14 +530,7 @@
 
             <!-- Dégâts des Eaux -->
             <div class="service-detail-full" id="degats-eaux">
-                <div class="service-detail-image">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#f5f5f5"/>
-                        <rect x="80" y="110" width="240" height="110" fill="#1e3a5f" opacity="0.3"/>
-                        <text x="200" y="155" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Dégâts des</text>
-                        <text x="200" y="185" font-size="28" font-weight="bold" text-anchor="middle" fill="#2a2a2a">Eaux</text>
-                    </svg>
-                </div>
+                <div class="service-detail-image" style="background-image: url('../images/degats.jpg');"></div>
                 <div class="service-detail-content">
                     <h3><a href="/services/reparation-degats-eaux">Réparation Dégâts des Eaux</a></h3>
                     <p class="service-detail-intro">Intervention pour les dégâts des eaux. Restauration des éléments endommagés et remise en état complète.</p>
