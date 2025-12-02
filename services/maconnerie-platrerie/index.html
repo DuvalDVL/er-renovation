@@ -24,7 +24,17 @@
         .service-intro-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
         .service-intro-text h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem; }
         .service-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
-        .service-intro-image { background: var(--light); border-radius: var(--radius); padding: 2rem; min-height: 350px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
+        
+        /* MODIFIÉ : Image réelle au lieu du placeholder */
+        .service-intro-image { 
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius); 
+            min-height: 350px; 
+            box-shadow: var(--shadow);
+            background-image: url('../../images/maconnerie.jpg');
+        }
+        
         .service-intro-image-placeholder { font-size: 5rem; }
         .service-details-section { padding: 80px 20px; background: var(--light); }
         .service-details-container { max-width: 1200px; margin: 0 auto; }
@@ -39,7 +49,20 @@
         .service-gallery-container { max-width: 1200px; margin: 0 auto; }
         .service-gallery-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
         .service-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .service-gallery-item { aspect-ratio: 1; background: var(--light); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; }
+        
+        /* MODIFIÉ : Images réelles au lieu des placeholders */
+        .service-gallery-item { 
+            aspect-ratio: 1; 
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius); 
+            overflow: hidden; 
+            box-shadow: var(--shadow); 
+            transition: all 0.3s ease; 
+            cursor: pointer; 
+            position: relative; 
+        }
+        
         .service-gallery-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
         .service-gallery-placeholder { font-size: 3rem; opacity: 0.3; }
         .service-gallery-overlay { position: absolute; inset: 0; background: rgba(255, 107, 53, 0.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 1rem; text-align: center; }
@@ -67,6 +90,11 @@
 <body>
    <nav class="navbar">
     <div class="navbar-container">
+        <a href="/" class="logo">
+            <img src="../../images/logo.png" alt="ER Rénovation" class="logo-img">
+            <span class="logo-text">ER RÉNOVATION</span>
+        </a>
+        
         <button class="mobile-toggle" id="mobileToggle">
             <span></span>
             <span></span>
@@ -125,9 +153,7 @@
                 <p>Nous réalisons tous types de travaux : montage de cloisons sèches, application d'enduits de finition, réparation de fissures, création d'ouvertures, et bien plus encore.</p>
                 <p>Travail soigné, respect des normes et finitions impeccables : chaque chantier est réalisé avec le professionnalisme qui nous caractérise depuis 10 ans.</p>
             </div>
-            <div class="service-intro-image">
-                <div class="service-intro-image-placeholder">🧱</div>
-            </div>
+            <div class="service-intro-image"></div>
         </div>
     </section>
 
@@ -190,28 +216,33 @@
         <div class="service-gallery-container">
             <h2>Nos Réalisations en Maçonnerie</h2>
             <div class="service-gallery-grid">
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🧱</div>
+                <!-- Image 1 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/maconnerie-cloison.jpg');">
                     <div class="service-gallery-overlay"><h4>Cloison BA13</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🧱</div>
+                
+                <!-- Image 2 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/maconnerie-enduit.jpg');">
                     <div class="service-gallery-overlay"><h4>Enduit lissé</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🧱</div>
+                
+                <!-- Image 3 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/maconnerie-reparation.jpg');">
                     <div class="service-gallery-overlay"><h4>Réparation mur</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🧱</div>
+                
+                <!-- Image 4 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/maconnerie-ouverture.jpg');">
                     <div class="service-gallery-overlay"><h4>Création ouverture</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🧱</div>
+                
+                <!-- Image 5 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/maconnerie-doublage.jpg');">
                     <div class="service-gallery-overlay"><h4>Doublage isolant</h4></div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🧱</div>
+                
+                <!-- Image 6 -->
+                <div class="service-gallery-item" style="background-image: url('../../images/maconnerie-exterieur.jpg');">
                     <div class="service-gallery-overlay"><h4>Enduit extérieur</h4></div>
                 </div>
             </div>
