@@ -77,57 +77,56 @@
 </head>
 <body>
     <!-- Navigation -->
-   <!-- Navigation CORRIGÉE -->
-<nav class="navbar">
-    <div class="navbar-container">
-        <!-- LE LOGO (MANQUANT DANS VOTRE CODE) -->
-        <a href="/" class="logo">
-            <img src="./images/logo.png" alt="ER Rénovation" class="logo-img">
-            <span class="logo-text">ER RÉNOVATION</span>
-        </a>
-        
-        <!-- Bouton mobile -->
-        <button class="mobile-toggle" id="mobileToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <!-- Menu -->
-        <ul class="nav-menu" id="navMenu">
-            <li><a href="/" class="nav-link">Accueil</a></li>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="./images/logo.png" alt="ER Rénovation" class="logo-img">
+                <span class="logo-text">ER RÉNOVATION</span>
+            </a>
             
-            <li class="dropdown">
-                <a href="/services/" class="nav-link dropdown-toggle">Services</a>
-                <ul class="dropdown-content">
-                    <li><a href="/services/peinture-interieure-exterieure/">Peinture intérieure / extérieure</a></li>
-                    <li><a href="/services/maconnerie-platrerie/">Maçonnerie / Plâtrerie</a></li>
-                    <li><a href="/services/menuiserie/">Menuiserie</a></li>
-                    <li><a href="/services/reparation-degats-eaux/">Réparation de dégâts des eaux</a></li>
-                    <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
-                    <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
-                </ul>
-            </li>
+            <!-- Bouton mobile -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                
+                <li class="dropdown">
+                    <a href="/services/" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture intérieure / extérieure</a></li>
+                        <li><a href="/services/maconnerie-platrerie/">Maçonnerie / Plâtrerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Réparation de dégâts des eaux</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                    </ul>
+                </li>
 
-            <li class="dropdown">
-                <a href="/#zones" class="nav-link dropdown-toggle">Zones d'intervention</a>
-                <ul class="dropdown-content">
-                    <li><a href="/zones-intervention/renovation-passy">Passy</a></li>
-                    <li><a href="/zones-intervention/renovation-chamonix">Chamonix</a></li>
-                    <li><a href="/zones-intervention/renovation-megeve">Megève</a></li>
-                    <li><a href="/zones-intervention/renovation-sallanches">Sallanches</a></li>
-                    <li><a href="/zones-intervention/renovation-saint-gervais">Saint-Gervais</a></li>
-                </ul>
-            </li>
-            
-            <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
-            <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
-            <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
-        </ul>
-    </div>
-</nav>
+                <li class="dropdown">
+                    <a href="/#zones" class="nav-link dropdown-toggle">Zones d'intervention</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/zones-intervention/renovation-passy">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais">Saint-Gervais</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
     
-    <!-- Hero Section -->
+    <!-- Hero Section - MODIFIÉE -->
     <section class="hero" id="accueil">
         <div class="hero-content">
             <div class="hero-text">
@@ -146,8 +145,13 @@
                 <p class="hero-trust">✓ Réponse en 48h - ✓ Tarifs transparents</p>
             </div>
             
+            <!-- IMAGE HERO - MODIFIÉE -->
             <div class="hero-image">
-                <img src="/images/logo.png" alt="Logo Er Renovation - Peinture intérieure et extérieure à Passy" class="hero-img-content">
+                <!-- Si tu veux une vraie photo au lieu du logo -->
+                <img src="./images/hero-image.jpg" alt="ER Rénovation - Travaux de rénovation professionnels" class="hero-img-content">
+                
+                <!-- OU garde le logo si tu préfères (commente la ligne au-dessus et décommente celle-ci) -->
+                <!-- <img src="./images/logo.png" alt="Logo ER Rénovation" class="hero-img-content"> -->
             </div>
         </div>
     </section>
@@ -190,13 +194,15 @@
         </div>
     </section>
 
-    <!-- Services -->
+    <!-- Services - LES 6 IMAGES SONT DÉJÀ CONFIGURÉES DANS LE CSS -->
     <section class="services-section" id="services">
         <div class="container">
             <h2 class="section-title">Nos services de rénovation</h2>
             <p class="section-subtitle">Plâtrerie, peinture, maçonnerie et bien plus encore</p>
             
             <div class="services-grid">
+                <!-- Les classes "peinture", "revetements", etc. chargent automatiquement les images depuis le CSS -->
+                
                 <div class="service-card">
                     <div class="service-image peinture"></div>
                     <h3>Peinture intérieure<br>et extérieure</h3>
@@ -471,7 +477,5 @@
 
     <!-- Scripts -->
     <script src="./js/main.js"></script>
-
-    <!-- Fin de la Partie 3 -->
 </body>
 </html>
