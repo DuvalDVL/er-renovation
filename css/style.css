@@ -519,6 +519,10 @@ p { font-size: 1rem; margin-bottom: 1rem; }
     background-image: url('../images/degats.jpg');
 }
 
+.service-image.platrerie {
+    background-image: url('../images/platrerie-hero.jpg');
+}
+
 /* ========================
    TESTIMONIALS SECTION
    ======================== */
