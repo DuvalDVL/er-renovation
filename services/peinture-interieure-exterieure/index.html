@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Service de peinture intérieure et extérieure à Passy, Haute-Savoie. Finitions impeccables, devis gratuit sous 48h.">
-    <meta name="keywords" content="peinture intérieure, peinture extérieure, peinture Passy, peinture Haute-Savoie">
+    <meta name="description" content="Service de plâtrerie à Passy, Haute-Savoie. Création de cloisons, isolation, enduits lisses et plâtre. Devis gratuit sous 48h.">
+    <meta name="keywords" content="plâtrerie, cloisons, isolation, enduit, plâtre, Passy, Haute-Savoie">
     <meta name="author" content="ER Rénovation">
-    <meta property="og:title" content="Peinture Intérieure et Extérieure - ER Rénovation">
-    <meta property="og:description" content="Expert en peinture à Passy et Haute-Savoie">
+    <meta property="og:title" content="Plâtrerie - ER Rénovation">
+    <meta property="og:description" content="Expert en plâtrerie à Passy et Haute-Savoie">
     <meta property="og:type" content="website">
     
     <link rel="icon" type="image/png" href="../../images/logo.png">
@@ -16,8 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
 
-    <!-- Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-FWX8S7YRJ5"></script>
-    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FWX8S7YRJ5'); </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FWX8S7YRJ5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FWX8S7YRJ5');
+    </script>
 
     <style>
         /* ========================
@@ -83,7 +89,7 @@
         .service-intro-image {
             background: var(--light);
             border-radius: var(--radius);
-            padding: 2rem;
+            overflow: hidden;
             min-height: 350px;
             display: flex;
             align-items: center;
@@ -91,8 +97,10 @@
             box-shadow: var(--shadow);
         }
 
-        .service-intro-image-placeholder {
-            font-size: 5rem;
+        .service-intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ========================
@@ -186,27 +194,32 @@
         }
 
         .service-gallery-item {
-            aspect-ratio: 1;
             background: var(--light);
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             cursor: pointer;
             position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            height: 0;
+        }
+
+        .service-gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
         }
 
         .service-gallery-item:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
-        }
-
-        .service-gallery-placeholder {
-            font-size: 3rem;
-            opacity: 0.3;
         }
 
         .service-gallery-overlay {
@@ -378,22 +391,22 @@
         }
     </style>
     
-    <title>Peinture Intérieure et Extérieure - ER Rénovation Passy</title>
+    <title>Plâtrerie - ER Rénovation Passy</title>
 </head>
 <body>
     <!-- Navigation -->
-   <nav class="navbar">
-    <div class="navbar-container">
-        <button class="mobile-toggle" id="mobileToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <ul class="nav-menu" id="navMenu">
-            <li><a href="/" class="nav-link">Accueil</a></li>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             
-            <li class="dropdown">
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                
+                <li class="dropdown">
                     <a href="/services/" class="nav-link dropdown-toggle">Services</a>
                     <ul class="dropdown-content">
                         <li><a href="/services/peinture-interieure-exterieure/">Peinture intérieure / extérieure</a></li>
@@ -406,29 +419,29 @@
                     </ul>
                 </li>
 
-            <li class="dropdown">
-                <a href="/#zones" class="nav-link dropdown-toggle">Zones d'intervention</a>
-                <ul class="dropdown-content">
-                    <li><a href="/zones-intervention/renovation-passy">Passy</a></li>
-                    <li><a href="/zones-intervention/renovation-chamonix">Chamonix</a></li>
-                    <li><a href="/zones-intervention/renovation-megeve">Megève</a></li>
-                    <li><a href="/zones-intervention/renovation-sallanches">Sallanches</a></li>
-                    <li><a href="/zones-intervention/renovation-saint-gervais">Saint-Gervais</a></li>
-                </ul>
-            </li>
-            
-            <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
-            <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
-            <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
-        </ul>
-    </div>
-</nav>
+                <li class="dropdown">
+                    <a href="/#zones" class="nav-link dropdown-toggle">Zones d'intervention</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/zones-intervention/renovation-passy">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais">Saint-Gervais</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero-service-detail">
         <div class="container">
-            <h1>Peinture Intérieure et Extérieure</h1>
-            <p>Des finitions impeccables pour transformer vos espaces. Expertise en peinture depuis 10 ans à Passy et en Haute-Savoie.</p>
+            <h1>Plâtrerie Professionnelle</h1>
+            <p>Création de cloisons, isolation thermique et phonique, enduits lisses et travaux de plâtre. Expertise et finitions soignées pour tous vos projets.</p>
             <div class="hero-service-cta">
                 <a href="/devis-gratuit/" class="btn btn-primary btn-large">Devis gratuit</a>
                 <a href="tel:+33688483403" class="btn btn-secondary btn-large">06 88 48 34 03</a>
@@ -440,13 +453,13 @@
     <section class="service-intro-section">
         <div class="service-intro-container">
             <div class="service-intro-text">
-                <h2>Votre Expert en Peinture</h2>
-                <p>Que vous souhaitiez rafraîchir une pièce, refaire entièrement votre intérieur ou rénover votre façade, notre équipe met son savoir-faire à votre service pour un résultat à la hauteur de vos attentes.</p>
-                <p>Nous utilisons des peintures de qualité professionnelle adaptées à chaque support et chaque usage. De la préparation minutieuse des surfaces aux finitions soignées, chaque étape est réalisée avec précision.</p>
-                <p>Nos peintres qualifiés interviennent dans toute la Haute-Savoie avec le matériel adapté pour garantir un travail propre, rapide et durable.</p>
+                <h2>Votre Expert en Plâtrerie</h2>
+                <p>La plâtrerie est un métier d'art qui demande précision et savoir-faire. Que vous souhaitiez créer de nouvelles cloisons, améliorer l'isolation de votre habitat ou obtenir des finitions parfaitement lisses, notre équipe met son expertise à votre service.</p>
+                <p>Nous intervenons sur tous types de chantiers en Haute-Savoie : rénovation d'appartements, maisons individuelles, locaux professionnels. De la pose de rails métalliques aux finitions en enduit lisse, chaque étape est réalisée dans les règles de l'art.</p>
+                <p>Nos plâtriers qualifiés utilisent des matériaux de qualité professionnelle et des techniques éprouvées pour garantir des résultats durables et esthétiques.</p>
             </div>
             <div class="service-intro-image">
-                <img src="../../images/peinture-hero.jpg" alt="Travaux de peinture professionnels">
+                <img src="../../images/platrerie-hero.jpg" alt="Travaux de plâtrerie professionnels">
             </div>
         </div>
     </section>
@@ -456,59 +469,59 @@
         <div class="service-details-container">
             <div class="service-details-grid">
                 
-                <!-- Peinture Intérieure -->
+                <!-- Cloisons -->
                 <div class="service-detail-card">
-                    <h3>🏠 Peinture Intérieure</h3>
-                    <p>Transformez vos espaces de vie avec des couleurs et finitions adaptées à vos goûts.</p>
+                    <h3>🧱 Création de Cloisons</h3>
+                    <p>Aménagez et structurez vos espaces avec des cloisons sur-mesure, solides et parfaitement isolées.</p>
                     <ul>
-                        <li>Peinture des murs et plafonds</li>
-                        <li>Peinture de boiseries et radiateurs</li>
-                        <li>Peinture de portes et fenêtres</li>
-                        <li>Finitions mate, satiné, brillante</li>
-                        <li>Peintures spéciales (tableau noir, magnétique)</li>
-                        <li>Conseils couleurs et harmonies</li>
+                        <li>Cloisons en plaques de plâtre (BA13)</li>
+                        <li>Cloisons alvéolaires légères</li>
+                        <li>Cloisons hydrofuges pour salles d'eau</li>
+                        <li>Cloisons coupe-feu</li>
+                        <li>Doublage de murs existants</li>
+                        <li>Création d'ouvertures et passages</li>
                     </ul>
                 </div>
 
-                <!-- Peinture Extérieure -->
+                <!-- Isolation -->
                 <div class="service-detail-card">
-                    <h3>🏡 Peinture Extérieure</h3>
-                    <p>Protégez et embellissez votre façade avec des peintures résistantes aux intempéries.</p>
+                    <h3>🏠 Isolation Thermique et Phonique</h3>
+                    <p>Améliorez le confort de votre habitat avec une isolation performante intégrée dans vos cloisons.</p>
                     <ul>
-                        <li>Peinture de façades</li>
-                        <li>Peinture de volets et menuiseries</li>
-                        <li>Ravalement et rénovation de façades</li>
-                        <li>Peintures anti-UV et respirantes</li>
-                        <li>Traitement des surfaces avant peinture</li>
-                        <li>Protection longue durée</li>
+                        <li>Isolation thermique (laine de verre, laine de roche)</li>
+                        <li>Isolation phonique contre les nuisances sonores</li>
+                        <li>Isolation des combles et rampants</li>
+                        <li>Doublage isolant des murs extérieurs</li>
+                        <li>Pose de panneaux isolants rigides</li>
+                        <li>Conseils sur les matériaux adaptés</li>
                     </ul>
                 </div>
 
-                <!-- Préparation -->
+                <!-- Enduits -->
                 <div class="service-detail-card">
-                    <h3>🔧 Préparation des Supports</h3>
-                    <p>Une préparation méticuleuse est la clé d'un résultat durable et esthétique.</p>
+                    <h3>🎨 Enduits Lisses et Finitions</h3>
+                    <p>Des surfaces parfaitement préparées pour vos peintures et revêtements muraux.</p>
                     <ul>
-                        <li>Ponçage et décapage des surfaces</li>
-                        <li>Rebouchage des fissures et trous</li>
-                        <li>Application d'enduits de lissage</li>
-                        <li>Traitement des supports humides</li>
-                        <li>Dégraissage et nettoyage</li>
-                        <li>Application de sous-couches adaptées</li>
+                        <li>Enduit de lissage complet</li>
+                        <li>Enduit de rebouchage et rattrapage</li>
+                        <li>Ponçage et préparation avant peinture</li>
+                        <li>Enduits décoratifs (stuc, chaux)</li>
+                        <li>Réparation de fissures</li>
+                        <li>Finitions soignées prêtes à peindre</li>
                     </ul>
                 </div>
 
-                <!-- Types de Peintures -->
+                <!-- Plâtre -->
                 <div class="service-detail-card">
-                    <h3>🎨 Types de Peintures</h3>
-                    <p>Nous utilisons des peintures adaptées à chaque projet et à chaque pièce.</p>
+                    <h3>⚒️ Travaux de Plâtre Traditionnels</h3>
+                    <p>Restauration et création d'éléments en plâtre pour donner du caractère à vos intérieurs.</p>
                     <ul>
-                        <li>Peintures acryliques (base eau)</li>
-                        <li>Peintures glycéro (base solvant)</li>
-                        <li>Peintures écologiques et bio</li>
-                        <li>Peintures anti-humidité</li>
-                        <li>Peintures isolantes thermiques</li>
-                        <li>Peintures lessivables pour cuisines/SDB</li>
+                        <li>Plafonds en plâtre</li>
+                        <li>Moulures et corniches décoratives</li>
+                        <li>Restauration de plâtres anciens</li>
+                        <li>Faux-plafonds et plafonds suspendus</li>
+                        <li>Rosaces et ornements</li>
+                        <li>Plâtre traditionnel à la chaux</li>
                     </ul>
                 </div>
 
@@ -519,42 +532,42 @@
     <!-- Gallery -->
     <section class="service-gallery-section">
         <div class="service-gallery-container">
-            <h2>Nos Réalisations en Peinture</h2>
+            <h2>Nos Réalisations en Plâtrerie</h2>
             <div class="service-gallery-grid">
                 <div class="service-gallery-item">
-                    <img src="../../images/peinture1.jpg" alt="Salon Moderne">
+                    <img src="../../images/platrerie-cloison1.jpg" alt="Création de cloison en plâtre">
                     <div class="service-gallery-overlay">
-                        <h4>Salon moderne</h4>
+                        <h4>Cloisons modernes</h4>
                     </div>
                 </div>
                 <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🎨</div>
-                    <img src="../../images/peinture2.jpg" alt="Façade extérieure">
-                        <h4>Façade extérieure</h4>
+                    <img src="../../images/platrerie-isolation1.jpg" alt="Isolation thermique et phonique">
+                    <div class="service-gallery-overlay">
+                        <h4>Isolation performante</h4>
                     </div>
                 </div>
                 <div class="service-gallery-item">
-                    <img src="../../images/peinture3.jpg" alt="Chambre Epurée">
+                    <img src="../../images/platrerie-enduit1.jpg" alt="Enduit lisse professionnel">
                     <div class="service-gallery-overlay">
-                        <h4>Chambre épurée</h4>
+                        <h4>Enduits lisses</h4>
                     </div>
                 </div>
                 <div class="service-gallery-item">
-                    <img src="../../images/peinture4.jpg" alt="Cuisine Rénovée">
+                    <img src="../../images/platrerie-plafond1.jpg" alt="Plafond en plâtre">
                     <div class="service-gallery-overlay">
-                        <h4>Cuisine rénovée</h4>
+                        <h4>Plafonds suspendus</h4>
                     </div>
                 </div>
                 <div class="service-gallery-item">
-                    <img src="../../images/peinture5.jpg" alt="Volet Extérieurs">
+                    <img src="../../images/platrerie-cloison2.jpg" alt="Cloison avec isolation">
                     <div class="service-gallery-overlay">
-                        <h4>Volets extérieurs</h4>
+                        <h4>Aménagement intérieur</h4>
                     </div>
                 </div>
                 <div class="service-gallery-item">
-                    <img src="../../images/peinture6.jpg" alt="Bureau Professionnel">
+                    <img src="../../images/platrerie-finition1.jpg" alt="Finitions plâtrerie">
                     <div class="service-gallery-overlay">
-                        <h4>Bureau professionnel</h4>
+                        <h4>Finitions impeccables</h4>
                     </div>
                 </div>
             </div>
@@ -568,23 +581,23 @@
             <div class="process-steps">
                 <div class="process-step">
                     <div class="process-step-number">1</div>
-                    <h3>Visite & Devis</h3>
-                    <p>Nous visitons votre chantier, évaluons vos besoins et vous proposons un devis détaillé gratuit.</p>
+                    <h3>Étude & Devis</h3>
+                    <p>Visite technique, prise de mesures précises et établissement d'un devis détaillé gratuit.</p>
                 </div>
                 <div class="process-step">
                     <div class="process-step-number">2</div>
                     <h3>Préparation</h3>
-                    <p>Protection des sols et meubles, préparation méticuleuse des surfaces à peindre.</p>
+                    <p>Protection des sols, traçage des implantations, préparation des supports existants.</p>
                 </div>
                 <div class="process-step">
                     <div class="process-step-number">3</div>
-                    <h3>Peinture</h3>
-                    <p>Application professionnelle en 2-3 couches selon les besoins, respect des temps de séchage.</p>
+                    <h3>Réalisation</h3>
+                    <p>Montage des structures, pose des plaques, application des enduits selon les règles de l'art.</p>
                 </div>
                 <div class="process-step">
                     <div class="process-step-number">4</div>
                     <h3>Finitions</h3>
-                    <p>Nettoyage complet du chantier, visite de réception et garantie satisfaction.</p>
+                    <p>Ponçage, lissage final, nettoyage complet du chantier et visite de réception.</p>
                 </div>
             </div>
         </div>
@@ -598,51 +611,51 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <button class="faq-question" data-faq="1">
-                        <span>Combien coûte un projet de peinture ?</span>
+                        <span>Quel est le prix d'une cloison en plâtre ?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer" id="faq-1">
-                        <p>Le tarif dépend de la surface, de l'état des supports et du type de peinture. En moyenne : 20-35€/m² pour l'intérieur, 25-45€/m² pour l'extérieur. Demandez un devis gratuit pour une estimation précise.</p>
+                        <p>Le tarif dépend de la hauteur, de l'isolation souhaitée et des finitions. En moyenne : 40-70€/m² pour une cloison standard avec isolation. Demandez un devis gratuit pour une estimation précise selon votre projet.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <button class="faq-question" data-faq="2">
-                        <span>Combien de temps dure un chantier de peinture ?</span>
+                        <span>Combien de temps pour créer une cloison ?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer" id="faq-2">
-                        <p>Une pièce standard : 1-2 jours. Un appartement complet : 3-7 jours. Une façade : 5-15 jours selon la taille. Les temps de séchage entre couches sont à prévoir.</p>
+                        <p>Une cloison simple : 1-2 jours. Une pièce complète avec plusieurs cloisons : 3-5 jours. Les temps de séchage des enduits peuvent allonger légèrement le délai avant les finitions.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <button class="faq-question" data-faq="3">
-                        <span>Dois-je vider complètement la pièce ?</span>
+                        <span>Quelle isolation choisir pour ma cloison ?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer" id="faq-3">
-                        <p>Idéalement oui, mais nous pouvons travailler avec des meubles regroupés au centre et protégés. Nous nous occupons de la protection complète des sols et des éléments fixes.</p>
+                        <p>Laine de verre pour l'isolation thermique et phonique standard. Laine de roche pour une meilleure isolation phonique. Isolants minces pour gagner de l'espace. Nous vous conseillons selon votre besoin et votre budget.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <button class="faq-question" data-faq="4">
-                        <span>Quelle peinture choisir pour quelle pièce ?</span>
+                        <span>Peut-on poser du carrelage sur une cloison en plâtre ?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer" id="faq-4">
-                        <p>Salon/Chambres : acrylique mate. Cuisine/SDB : acrylique satiné lessivable. Boiseries : glycéro satiné. Extérieur : acrylique respirante anti-UV. Nous vous conseillons selon votre projet.</p>
+                        <p>Oui, à condition d'utiliser des plaques hydrofuges (vertes) dans les pièces humides et de respecter les techniques de pose adaptées. Nous utilisons systématiquement des plaques BA13 hydro dans les salles de bain.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <button class="faq-question" data-faq="5">
-                        <span>Intervenez-vous en extérieur l'hiver ?</span>
+                        <span>Combien de couches d'enduit sont nécessaires ?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer" id="faq-5">
-                        <p>La peinture extérieure nécessite des températures > 5°C et un temps sec. En hiver, nous privilégions les travaux intérieurs et planifions l'extérieur pour la belle saison.</p>
+                        <p>Pour un résultat parfait : 1 couche de calicot sur les joints, 2-3 couches d'enduit de jointement, puis 1 couche d'enduit de lissage final. Chaque couche est poncée pour obtenir une surface impeccable.</p>
                     </div>
                 </div>
             </div>
@@ -652,7 +665,7 @@
     <!-- CTA -->
     <section class="service-cta-section">
         <div class="container">
-            <h2>Prêt à Donner un Coup de Neuf ?</h2>
+            <h2>Un Projet en Plâtrerie ?</h2>
             <p>Contactez-nous pour un devis gratuit et des conseils personnalisés</p>
             <a href="/devis-gratuit/" class="btn btn-primary btn-large">Demander un devis</a>
         </div>
