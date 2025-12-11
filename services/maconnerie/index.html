@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Service de maçonnerie à Passy, Haute-Savoie. Réparations, coffrages spéciaux, murets et murs. Devis gratuit sous 48h.">
+    <meta name="keywords" content="maçonnerie, réparation, coffrage, muret, mur, Passy, Haute-Savoie">
+    <meta name="author" content="ER Rénovation">
+    <meta property="og:title" content="Maçonnerie - ER Rénovation">
+    <meta property="og:description" content="Expert en maçonnerie à Passy et Haute-Savoie">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FWX8S7YRJ5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FWX8S7YRJ5');
+    </script>
+
+    <style>
+        /* ========================
+           SERVICE PAGE STYLES
+           ======================== */
+
+        .hero-service-detail {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff5a22 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-service-detail h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-service-detail p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-service-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ========================
+           SERVICE CONTENT
+           ======================== */
+
+        .service-intro-section {
+            padding: 60px 20px;
+            background: var(--white);
+        }
+
+        .service-intro-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .service-intro-text h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .service-intro-text p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-intro-image {
+            background: var(--light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .service-intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ========================
+           SERVICES DETAILS
+           ======================== */
+
+        .service-details-section {
+            padding: 80px 20px;
+            background: var(--light);
+        }
+
+        .service-details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-detail-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-top: 4px solid #ff6b35;
+        }
+
+        .service-detail-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .service-detail-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-detail-card li {
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .service-detail-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .service-detail-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* ========================
+           GALLERY SECTION
+           ======================== */
+
+        .service-gallery-section {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .service-gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-gallery-container h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .service-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-gallery-item {
+            aspect-ratio: 1;
+            background: var(--light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .service-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 107, 53, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .service-gallery-item:hover .service-gallery-overlay {
+            opacity: 1;
+        }
+
+        .service-gallery-overlay h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+
+        /* ========================
+           PROCESS SECTION
+           ======================== */
+
+        .service-process-section {
+            padding: 80px 20px;
+            background: var(--light);
+        }
+
+        .service-process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-process-container h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .process-step-number {
+            width: 50px;
+            height: 50px;
+            background: #ff6b35;
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ========================
+           FAQ SECTION
+           ======================== */
+
+        .service-faq-section {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .service-faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-faq-container h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        /* ========================
+           CTA SECTION
+           ======================== */
+
+        .service-cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .service-cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* ========================
+           RESPONSIVE
+           ======================== */
+
+        @media (max-width: 1024px) {
+            .service-intro-container {
+                grid-template-columns: 1fr;
+            }
+
+            .service-details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-service-detail h1 {
+                font-size: 2rem;
+            }
+
+            .hero-service-cta {
+                flex-direction: column;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .service-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <title>Maçonnerie - ER Rénovation Passy</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                
+                <li class="dropdown">
+                    <a href="/services/" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture intérieure / extérieure</a></li>
+                        <li><a href="/services/maconnerie/">Maçonnerie</a></li>
+                        <li><a href="/services/platrerie/">Plâtrerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Réparation de dégâts des eaux</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="/#zones" class="nav-link dropdown-toggle">Zones d'intervention</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/zones-intervention/renovation-passy">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais">Saint-Gervais</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-service-detail">
+        <div class="container">
+            <h1>Maçonnerie Professionnelle</h1>
+            <p>Réparations structurelles, coffrages sur-mesure, construction de murets et murs. Solidité et durabilité garanties pour tous vos projets en Haute-Savoie.</p>
+            <div class="hero-service-cta">
+                <a href="/devis-gratuit/" class="btn btn-primary btn-large">Devis gratuit</a>
+                <a href="tel:+33688483403" class="btn btn-secondary btn-large">06 88 48 34 03</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Intro -->
+    <section class="service-intro-section">
+        <div class="service-intro-container">
+            <div class="service-intro-text">
+                <h2>Votre Expert en Maçonnerie</h2>
+                <p>La maçonnerie est le fondement de toute construction solide et durable. Notre équipe de maçons qualifiés intervient sur tous types de travaux : réparations structurelles, créations d'ouvertures, constructions neuves ou rénovations complètes.</p>
+                <p>Nous maîtrisons les techniques traditionnelles et modernes de la maçonnerie pour vous garantir des ouvrages robustes qui résistent au temps et aux conditions climatiques de la Haute-Savoie.</p>
+                <p>Du simple muret de jardin aux coffrages complexes en passant par les réparations de fissures, chaque chantier est réalisé avec rigueur et dans le respect des normes de construction en vigueur.</p>
+            </div>
+            <div class="service-intro-image">
+                <img src="../../images/maconnerie-hero.jpg" alt="Travaux de maçonnerie professionnels">
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details-section">
+        <div class="service-details-container">
+            <div class="service-details-grid">
+                
+                <!-- Réparations -->
+                <div class="service-detail-card">
+                    <h3>🔨 Réparations Structurelles</h3>
+                    <p>Diagnostics et réparations de tous types de désordres affectant vos murs et structures.</p>
+                    <ul>
+                        <li>Réparation de fissures et lézardes</li>
+                        <li>Reprise en sous-œuvre</li>
+                        <li>Réfection de joints de maçonnerie</li>
+                        <li>Traitement de l'humidité des murs</li>
+                        <li>Consolidation de structures anciennes</li>
+                        <li>Réparation de fondations</li>
+                    </ul>
+                </div>
+
+                <!-- Coffrages -->
+                <div class="service-detail-card">
+                    <h3>🏗️ Coffrages Spéciaux</h3>
+                    <p>Réalisation de coffrages sur-mesure pour tous types d'ouvrages en béton armé.</p>
+                    <ul>
+                        <li>Coffrages de poteaux et poutres</li>
+                        <li>Coffrages de dalles et planchers</li>
+                        <li>Coffrages perdus et récupérables</li>
+                        <li>Coffrages de formes complexes</li>
+                        <li>Coulage de béton armé</li>
+                        <li>Coffrages pour extensions</li>
+                    </ul>
+                </div>
+
+                <!-- Murets et Murs -->
+                <div class="service-detail-card">
+                    <h3>🧱 Murets et Murs</h3>
+                    <p>Construction et rénovation de murs extérieurs et intérieurs, murets de soutènement et clôtures.</p>
+                    <ul>
+                        <li>Murets de jardin et terrasse</li>
+                        <li>Murs de clôture et séparation</li>
+                        <li>Murs de soutènement</li>
+                        <li>Murs en pierre naturelle</li>
+                        <li>Murs en parpaings ou briques</li>
+                        <li>Habillage et enduits extérieurs</li>
+                    </ul>
+                </div>
+
+                <!-- Ouvertures -->
+                <div class="service-detail-card">
+                    <h3>🚪 Création d'Ouvertures</h3>
+                    <p>Percement et agrandissement d'ouvertures avec respect des structures porteuses.</p>
+                    <ul>
+                        <li>Création de portes et fenêtres</li>
+                        <li>Agrandissement d'ouvertures existantes</li>
+                        <li>Pose de linteaux et IPN</li>
+                        <li>Création de baies vitrées</li>
+                        <li>Ouvertures dans murs porteurs</li>
+                        <li>Études de faisabilité structurelle</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="service-gallery-section">
+        <div class="service-gallery-container">
+            <h2>Nos Réalisations en Maçonnerie</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <img src="../../images/maconnerie-muret1.jpg" alt="Muret en pierre">
+                    <div class="service-gallery-overlay">
+                        <h4>Muret de jardin</h4>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <img src="../../images/maconnerie-mur1.jpg" alt="Mur de soutènement">
+                    <div class="service-gallery-overlay">
+                        <h4>Mur de soutènement</h4>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <img src="../../images/maconnerie-coffrage1.jpg" alt="Coffrage béton">
+                    <div class="service-gallery-overlay">
+                        <h4>Coffrage spécial</h4>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <img src="../../images/maconnerie-reparation1.jpg" alt="Réparation de mur">
+                    <div class="service-gallery-overlay">
+                        <h4>Réparation structurelle</h4>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <img src="../../images/maconnerie-ouverture1.jpg" alt="Création d'ouverture">
+                    <div class="service-gallery-overlay">
+                        <h4>Création d'ouverture</h4>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <img src="../../images/maconnerie-pierre1.jpg" alt="Mur en pierre">
+                    <div class="service-gallery-overlay">
+                        <h4>Maçonnerie traditionnelle</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="service-process-section">
+        <div class="service-process-container">
+            <h2>Notre Processus de Travail</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-number">1</div>
+                    <h3>Diagnostic & Étude</h3>
+                    <p>Analyse technique du projet, étude de faisabilité et établissement d'un devis détaillé gratuit.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">2</div>
+                    <h3>Préparation</h3>
+                    <p>Sécurisation du chantier, traçage précis, approvisionnement en matériaux de qualité.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">3</div>
+                    <h3>Réalisation</h3>
+                    <p>Exécution des travaux selon les règles de l'art, respect des normes de construction.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">4</div>
+                    <h3>Finitions</h3>
+                    <p>Contrôle qualité, finitions soignées, nettoyage et visite de réception du chantier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="service-faq-section">
+        <div class="service-faq-container">
+            <h2>Questions Fréquentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="1">
+                        <span>Quel est le prix d'un muret de jardin ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-1">
+                        <p>Le tarif dépend de la hauteur, de la longueur et du type de matériau. En moyenne : 80-150€/m² pour un muret en parpaings, 150-300€/m² pour un muret en pierre naturelle. Devis gratuit pour une estimation précise.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="2">
+                        <span>Combien de temps pour construire un mur ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-2">
+                        <p>Un muret de jardin (10m) : 2-4 jours. Un mur de clôture (20m) : 5-10 jours. Un mur de soutènement : 7-15 jours selon la complexité. Les temps de séchage du béton sont à prévoir.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="3">
+                        <span>Peut-on créer une ouverture dans un mur porteur ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-3">
+                        <p>Oui, mais cela nécessite une étude structurelle préalable et la pose d'un linteau ou IPN pour reprendre les charges. Nous réalisons ce type de travaux selon les normes en vigueur.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="4">
+                        <span>Comment réparer une fissure dans un mur ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-4">
+                        <p>Selon la taille : petites fissures superficielles = rebouchage simple. Fissures importantes = diagnostic, traitement de la cause (tassement, humidité) puis réparation structurelle. Nous évaluons gratuitement la gravité.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="5">
+                        <span>Quel matériau choisir pour mon muret ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-5">
+                        <p>Parpaings : économique et rapide. Pierre naturelle : esthétique et authentique mais plus coûteux. Briques : bon compromis. Nous vous conseillons selon votre budget, l'usage et le style recherché.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="service-cta-section">
+        <div class="container">
+            <h2>Un Projet en Maçonnerie ?</h2>
+            <p>Contactez-nous pour un devis gratuit et des conseils personnalisés</p>
+            <a href="/devis-gratuit/" class="btn btn-primary btn-large">Demander un devis</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ER RÉNOVATION</h4>
+                    <p>Votre expert en rénovation à Passy, Haute-Savoie</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61556789047369" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/maconnerie/">Maçonnerie</a></li>
+                        <li><a href="/services/platrerie/">Plâtrerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Dégâts des eaux</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Zones d'intervention</h4>
+                    <ul>
+                        <li><a href="/zones-intervention/renovation-passy/">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix/">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve/">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches/">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais/">Saint-Gervais</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33688483403">06 88 48 34 03</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:errenovation74190@gmail.com">errenovation74190@gmail.com</a></p>
+                    <p><strong>Adresse :</strong><br>481 avenue de Chamonix<br>74190 Passy</p>
+                    <p><strong>Horaires :</strong><br>Lun-Sam : 8h-19h30<br>Dimanche : Fermé</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ER Rénovation - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <span>•</span>
+                    <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+                    <span>•</span>
+                    <a href="https://www.duvaldvl.com">Site créé et édité par Duval DVL</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
