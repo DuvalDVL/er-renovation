@@ -17,6 +17,24 @@
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FWX8S7YRJ5'); </script>
     
     <style>
+
+    .service-intro-image {
+            background: var(--light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .service-intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .hero-service-detail { background: linear-gradient(135deg, #1e3a5f 0%, #2a4d7a 100%); color: var(--white); padding: 80px 20px; text-align: center; }
         .hero-service-detail h1 { font-size: 2.8rem; margin-bottom: 1rem; }
         .hero-service-detail p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto 2rem; }
@@ -25,8 +43,6 @@
         .service-intro-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
         .service-intro-text h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem; }
         .service-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
-        .service-intro-image { background: var(--light); border-radius: var(--radius); padding: 2rem; min-height: 350px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
-        .service-intro-image-placeholder { font-size: 5rem; }
         .service-details-section { padding: 80px 20px; background: var(--light); }
         .service-details-container { max-width: 1200px; margin: 0 auto; }
         .service-details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
@@ -87,6 +103,7 @@
                         <li><a href="/services/reparation-degats-eaux/">Réparation de dégâts des eaux</a></li>
                         <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
                         <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/demenagement-nettoyage/">Déménagement & nettoyage</a></li>
                     </ul>
                 </li>
 
@@ -126,7 +143,7 @@
                 <p>Conseils déco, choix des matériaux, pose professionnelle : nous vous accompagnons de A à Z pour un résultat à la hauteur de vos attentes.</p>
             </div>
             <div class="service-intro-image">
-                <div class="service-intro-image-placeholder">🖼️</div>
+                <img src="../../images/revetements.jpg" alt="Enduit et plâtre">
             </div>
         </div>
     </section>
@@ -176,34 +193,34 @@
         <div class="service-gallery-container">
             <h2>Nos Réalisations en Revêtements Muraux</h2>
             <div class="service-gallery-grid">
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🖼️</div>
-                    <div class="service-gallery-overlay"><h4>Papier peint salon</h4></div>
+               <div class="service-gallery-item">
+                    <img src="../../images/realisations/muraux-1.jpg" alt="Application d'enduit lisse">
+                    <div class="service-gallery-overlay">
+                        <h4>Application d'enduit lisse</h4>
+                    </div>
                 </div>
                 <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🖼️</div>
-                    <div class="service-gallery-overlay"><h4>Carrelage SDB</h4></div>
+                    <img src="../../images/realisations/muraux-2.jpg" alt="Mur en cours de réparation">
+                    <div class="service-gallery-overlay">
+                        <h4>Mur en cours de réparation</h4>
+                    </div>
                 </div>
                 <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🖼️</div>
-                    <div class="service-gallery-overlay"><h4>Enduit texturé</h4></div>
+                    <img src="../../images/realisations/muraux-3.jpg" alt="Application de plâtre sur mur">
+                    <div class="service-gallery-overlay">
+                        <h4>Application de plâtre sur mur</h4>
+                    </div>
                 </div>
                 <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🖼️</div>
-                    <div class="service-gallery-overlay"><h4>Crédence cuisine</h4></div>
+                    <img src="../../images/realisations/muraux-4.jpg" alt="Mur réparé après intervention">
+                    <div class="service-gallery-overlay">
+                        <h4>Mur réparé après intervention</h4>
+                    </div>
                 </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🖼️</div>
-                    <div class="service-gallery-overlay"><h4>Parement pierre</h4></div>
-                </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">🖼️</div>
-                    <div class="service-gallery-overlay"><h4>Mosaïque</h4></div>
-                </div>
+
             </div>
         </div>
     </section>
-
     <section class="service-process-section">
         <div class="service-process-container">
             <h2>Notre Processus de Travail</h2>
@@ -287,6 +304,7 @@
                         <li><a href="/services/platrerie/">Plâtrerie</a></li>
                         <li><a href="/services/menuiserie/">Menuiserie</a></li>
                         <li><a href="/services/reparation-degats-eaux/">Dégâts des eaux</a></li>
+                        <li><a href="/services/demenagement-nettoyage/">Déménagement & nettoyage</a></li>
                     </ul>
                 </div>
                 
