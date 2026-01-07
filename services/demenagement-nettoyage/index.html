@@ -1,1 +1,441 @@
-d
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Déménagement et nettoyage à Passy : déménagement clé en main, transport de meubles, débarras, nettoyage fin de bail. Service complet en Haute-Savoie.">
+    <meta name="keywords" content="déménagement, nettoyage, fin de bail, débarras, transport meubles, Passy, Haute-Savoie">
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <!-- Google Analytics --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FWX8S7YRJ5"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FWX8S7YRJ5'); </script>
+   
+    <style>
+        .service-intro-image {
+            background: var(--light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .service-intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-gallery-item { 
+            aspect-ratio: 1; 
+            background: var(--light); 
+            border-radius: var(--radius); 
+            overflow: hidden; 
+            box-shadow: var(--shadow); 
+            transition: all 0.3s ease; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer; 
+            position: relative; 
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .service-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-service-detail { background: linear-gradient(135deg, #1e3a5f 0%, #2a4a6f 100%); color: var(--white); padding: 80px 20px; text-align: center; }
+        .hero-service-detail h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .hero-service-detail p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto 2rem; }
+        .hero-service-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .service-intro-section { padding: 60px 20px; background: var(--white); }
+        .service-intro-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
+        .service-intro-text h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem; }
+        .service-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
+        .service-details-section { padding: 80px 20px; background: var(--light); }
+        .service-details-container { max-width: 1200px; margin: 0 auto; }
+        .service-details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+        .service-detail-card { background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow); border-top: 4px solid #1e3a5f; }
+        .service-detail-card h3 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.4rem; }
+        .service-detail-card ul { list-style: none; padding: 0; }
+        .service-detail-card li { padding: 0.6rem 0; padding-left: 1.8rem; position: relative; color: #555; line-height: 1.6; }
+        .service-detail-card li:before { content: "✓"; position: absolute; left: 0; color: #1e3a5f; font-weight: bold; font-size: 1.2rem; }
+        .service-detail-card p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+        .service-gallery-section { padding: 80px 20px; background: var(--white); }
+        .service-gallery-container { max-width: 1200px; margin: 0 auto; }
+        .service-gallery-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .service-gallery-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .service-gallery-placeholder { font-size: 3rem; opacity: 0.3; }
+        .service-gallery-overlay { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 1rem; text-align: center; }
+        .service-gallery-item:hover .service-gallery-overlay { opacity: 1; }
+        .service-gallery-overlay h4 { color: var(--white); font-size: 1.1rem; }
+        .service-process-section { padding: 80px 20px; background: var(--light); }
+        .service-process-container { max-width: 1200px; margin: 0 auto; }
+        .service-process-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .process-step { text-align: center; padding: 2rem; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+        .process-step-number { width: 50px; height: 50px; background: #1e3a5f; color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1.5rem; }
+        .process-step h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem; }
+        .process-step p { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; }
+        .service-faq-section { padding: 80px 20px; background: var(--white); }
+        .service-faq-container { max-width: 900px; margin: 0 auto; }
+        .service-faq-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+        .service-cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .service-cta-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .service-cta-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
+        @media (max-width: 1024px) { .service-intro-container, .service-details-grid { grid-template-columns: 1fr; } .process-steps, .service-gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .hero-service-detail h1 { font-size: 2rem; } .hero-service-cta { flex-direction: column; } .process-steps, .service-gallery-grid { grid-template-columns: 1fr; } }
+    </style>
+    <title>Déménagement et Nettoyage - ER Rénovation Passy</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                
+                <li class="dropdown">
+                    <a href="/services/" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture intérieure / extérieure</a></li>
+                        <li><a href="/services/maconnerie/">Maçonnerie</a></li>
+                        <li><a href="/services/platrerie/">Plâtrerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Réparation de dégâts des eaux</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/demenagement-nettoyage/">Déménagement & nettoyage</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="/#zones" class="nav-link dropdown-toggle">Zones d'intervention</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/zones-intervention/renovation-passy">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais">Saint-Gervais</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/devis-gratuit/" class="nav-link nav-link-cta">Devis gratuit</a></li>
+                <li><a href="tel:+33688483403" class="nav-link nav-phone">06 88 48 34 03</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-service-detail">
+        <div class="container">
+            <h1>Déménagement et Nettoyage Professionnel</h1>
+            <p>Déménagement clé en main, transport de meubles, débarras et nettoyage complet. Service tout-en-un en Haute-Savoie, Savoie et Ain.</p>
+            <div class="hero-service-cta">
+                <a href="/devis-gratuit/" class="btn btn-primary btn-large">Devis gratuit</a>
+                <a href="tel:+33688483403" class="btn btn-secondary btn-large">06 88 48 34 03</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-intro-section">
+        <div class="service-intro-container">
+            <div class="service-intro-text">
+                <h2>Votre Partenaire Déménagement & Nettoyage</h2>
+                <p>Que vous déménagiez, ayez besoin d'un débarras ou d'un nettoyage complet, notre équipe vous accompagne pour un service clé en main. Particuliers, étudiants, seniors : nous nous adaptons à tous vos besoins.</p>
+                <p>Du démontage des meubles au transport soigné, de l'emballage professionnel au nettoyage intensif post-déménagement : nous gérons toutes les étapes pour vous simplifier la vie.</p>
+                <p>Nous intervenons en Haute-Savoie, Savoie et Ain avec ou sans ascenseur, en urgence si nécessaire, pour tous types de logements : appartements, maisons, locaux professionnels.</p>
+            </div>
+            <div class="service-intro-image">
+                <img src="../../images/demenagement.jpg" alt="Service de déménagement professionnel">
+            </div>
+        </div>
+    </section>
+
+    <section class="service-details-section">
+        <div class="service-details-container">
+            <div class="service-details-grid">
+
+                <div class="service-detail-card">
+                    <h3>🚚 Déménagement Clé en Main</h3>
+                    <p>Service complet de déménagement pour particuliers, étudiants et seniors.</p>
+                    <ul>
+                        <li>Déménagement particulier tout profil</li>
+                        <li>Déménagement étudiant économique</li>
+                        <li>Déménagement senior avec accompagnement</li>
+                        <li>Déménagement avec ou sans ascenseur</li>
+                        <li>Déménagement en urgence sous 48h</li>
+                        <li>Haute-Savoie, Savoie et Ain</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>📦 Transport & Manutention</h3>
+                    <p>Transport sécurisé de vos biens, meubles lourds et objets fragiles.</p>
+                    <ul>
+                        <li>Transport de meubles lourds</li>
+                        <li>Transport d'objets fragiles</li>
+                        <li>Démontage et remontage de meubles</li>
+                        <li>Fourniture de cartons et matériel</li>
+                        <li>Emballage professionnel soigné</li>
+                        <li>Protection complète du mobilier</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🗑️ Débarras & Évacuation</h3>
+                    <p>Débarras complet pour tous types de situations.</p>
+                    <ul>
+                        <li>Débarras suite expulsion</li>
+                        <li>Débarras de cave et grenier</li>
+                        <li>Évacuation de mobilier</li>
+                        <li>Enlèvement d'encombrants</li>
+                        <li>Tri et recyclage responsable</li>
+                        <li>Nettoyage après débarras</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🧹 Nettoyage Professionnel</h3>
+                    <p>Nettoyage complet adapté à toutes les situations.</p>
+                    <ul>
+                        <li>Nettoyage fin de bail / état des lieux</li>
+                        <li>Nettoyage avant/après déménagement</li>
+                        <li>Nettoyage après travaux ou rénovation</li>
+                        <li>Nettoyage appartement vide</li>
+                        <li>Nettoyage appartement meublé</li>
+                        <li>Nettoyage suite expulsion</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>✨ Nettoyage Intensif</h3>
+                    <p>Solutions pour les situations difficiles nécessitant un nettoyage en profondeur.</p>
+                    <ul>
+                        <li>Nettoyage intensif (crasse tenace)</li>
+                        <li>Nettoyage extrême (syndrome de Diogène)</li>
+                        <li>Désinfection et assainissement</li>
+                        <li>Désinsectisation si nécessaire</li>
+                        <li>Nettoyage sanitaires en profondeur</li>
+                        <li>Remise en état complète</li>
+                    </ul>
+                </div>
+
+                <div class="service-detail-card">
+                    <h3>🪟 Nettoyage Spécialisé</h3>
+                    <p>Prestations spécifiques pour un résultat impeccable.</p>
+                    <ul>
+                        <li>Nettoyage vitres et baies vitrées</li>
+                        <li>Nettoyage sols brillants</li>
+                        <li>Dégraissage cuisine professionnel</li>
+                        <li>Détartrage sanitaires</li>
+                        <li>Nettoyage murs et plafonds</li>
+                        <li>Traitement anti-odeurs</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="service-gallery-section">
+        <div class="service-gallery-container">
+            <h2>Nos Réalisations Déménagement & Nettoyage</h2>
+            <div class="service-gallery-grid">
+                <div class="service-gallery-item">
+                    <img src="../../images/realisations/nettoyage-1.jpg" alt="Camion de déménagement avec cartons rangés">
+                    <div class="service-gallery-overlay">
+                        <h4>Déménagement organisé</h4>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <img src="../../images/realisations/nettoyage-2.jpg" alt="Emballage soigneux du mobilier">
+                    <div class="service-gallery-overlay">
+                        <h4>Emballage professionnel</h4>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <img src="../../images/realisations/nettoyage-3.jpg" alt="Nettoyage de baie vitrée">
+                    <div class="service-gallery-overlay">
+                        <h4>Nettoyage vitres</h4>
+                    </div>
+                </div>
+                <div class="service-gallery-item">
+                    <img src="../../images/realisations/nettoyage-4.jpg" alt="Appartement vide et propre">
+                    <div class="service-gallery-overlay">
+                        <h4>Résultat impeccable</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-process-section">
+        <div class="service-process-container">
+            <h2>Notre Processus de Travail</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-number">1</div>
+                    <h3>Évaluation</h3>
+                    <p>Visite du logement, évaluation du volume, établissement d'un devis détaillé gratuit.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">2</div>
+                    <h3>Préparation</h3>
+                    <p>Fourniture de cartons, emballage soigné, démontage des meubles si nécessaire.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">3</div>
+                    <h3>Transport</h3>
+                    <p>Chargement sécurisé, transport professionnel, déchargement et remontage sur place.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-number">4</div>
+                    <h3>Nettoyage</h3>
+                    <p>Nettoyage complet du logement, désinfection si besoin, état des lieux impeccable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-faq-section">
+        <div class="service-faq-container">
+            <h2>Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="1">
+                        <span>Combien coûte un déménagement ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-1">
+                        <p>Le tarif dépend du volume, de la distance et des services demandés. Studio : à partir de 300€. T2 : à partir de 500€. T3+ : sur devis. Nettoyage inclus selon formule. Demandez un devis gratuit personnalisé.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="2">
+                        <span>Fournissez-vous les cartons et le matériel ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-2">
+                        <p>Oui, nous fournissons cartons adaptés, papier bulle, scotch, couvertures de protection et tout le matériel nécessaire. Vous pouvez aussi emballer vous-même si vous préférez.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="3">
+                        <span>Intervenez-vous en urgence ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-3">
+                        <p>Oui, nous proposons des déménagements en urgence sous 48h selon disponibilités. Idéal pour expulsion, sinistre ou imprévu. Contactez-nous rapidement pour vérifier nos disponibilités.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="4">
+                        <span>Le nettoyage de fin de bail est-il inclus ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-4">
+                        <p>Le nettoyage de fin de bail peut être ajouté au déménagement ou réalisé séparément. Nous assurons un nettoyage conforme aux exigences des bailleurs pour récupérer votre caution : vitres, sols, sanitaires, cuisine, etc.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="5">
+                        <span>Gérez-vous les situations difficiles (Diogène, expulsion) ?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-5">
+                        <p>Oui, notre équipe est formée pour gérer les situations sensibles : syndrome de Diogène, expulsion, insalubrité. Intervention discrète, débarras complet, nettoyage extrême, désinfection et remise en état totale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-cta-section">
+        <div class="container">
+            <h2>Besoin d'un Déménagement ou d'un Nettoyage ?</h2>
+            <p>Contactez-nous pour un devis gratuit et un accompagnement personnalisé</p>
+            <a href="/devis-gratuit/" class="btn btn-primary btn-large">Demander un devis</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ER RÉNOVATION</h4>
+                    <p>Votre expert en rénovation à Passy, Haute-Savoie</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61556789047369" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/peinture-interieure-exterieure/">Peinture</a></li>
+                        <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
+                        <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/maconnerie/">Maçonnerie</a></li>
+                        <li><a href="/services/platrerie/">Plâtrerie</a></li>
+                        <li><a href="/services/menuiserie/">Menuiserie</a></li>
+                        <li><a href="/services/reparation-degats-eaux/">Dégâts des eaux</a></li>
+                        <li><a href="/services/demenagement-nettoyage/">Déménagement & nettoyage</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Zones d'intervention</h4>
+                    <ul>
+                        <li><a href="/zones-intervention/renovation-passy/">Passy</a></li>
+                        <li><a href="/zones-intervention/renovation-chamonix/">Chamonix</a></li>
+                        <li><a href="/zones-intervention/renovation-megeve/">Megève</a></li>
+                        <li><a href="/zones-intervention/renovation-sallanches/">Sallanches</a></li>
+                        <li><a href="/zones-intervention/renovation-saint-gervais/">Saint-Gervais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33688483403">06 88 48 34 03</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:errenovation74190@gmail.com">errenovation74190@gmail.com</a></p>
+                    <p><strong>Adresse :</strong><br>481 avenue de Chamonix<br>74190 Passy</p>
+                    <p><strong>Horaires :</strong><br>Lun-Sam : 8h-19h30<br>Dimanche : Fermé</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ER Rénovation - Tous droits réservés</p>
+                <div class="footer-links">
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <span>•</span>
+                    <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+                    <span>•</span>
+                    <a href="https://www.duvaldvl.com">Site créé et édité par Duval DVL</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
