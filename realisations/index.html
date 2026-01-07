@@ -822,45 +822,50 @@
     </footer>
 
     <script src="../js/main.js"></script>
-    <script>
-        // ========================
-        // LIGHTBOX MODAL
-        // ========================
+<script>
+    // ========================
+    // LIGHTBOX MODAL
+    // ========================
 
-        const modal = document.getElementById('modal');
-        const modalImage = document.getElementById('modalImage');
-        const modalClose = document.getElementById('modalClose');
-        const galleryItems = document.querySelectorAll('.service-gallery-item');
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+    const galleryItems = document.querySelectorAll('.service-gallery-item');
 
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const overlay = item.querySelector('.gallery-overlay');
-                const title = overlay.querySelector('h3').textContent;
-                const subtitle = overlay.querySelector('p').textContent;
-                
-                // Pour la démo, on utilise le placeholder emoji
-                // En production, ce serait une vraie image
-                modalImage.alt = `${title} - ${subtitle}`;
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            
+            if (img && img.src) {
+                // Afficher l'image dans la lightbox
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
                 modal.classList.add('open');
-            });
+            }
         });
+    });
 
-        modalClose.addEventListener('click', () => {
+    // Fermer avec le bouton X
+    modalClose.addEventListener('click', () => {
+        modal.classList.remove('open');
+        modalImage.src = ''; // Vider l'image pour éviter les bugs
+    });
+
+    // Fermer en cliquant sur le fond noir
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
             modal.classList.remove('open');
-        });
+            modalImage.src = '';
+        }
+    });
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('open');
-            }
-        });
-
-        // Fermer avec la touche Echap
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('open')) {
-                modal.classList.remove('open');
-            }
-        });
-    </script>
+    // Fermer avec la touche Echap
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+            modal.classList.remove('open');
+            modalImage.src = '';
+        }
+    });
+</script>
 </body>
 </html>
