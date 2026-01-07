@@ -34,6 +34,34 @@
             height: 100%;
             object-fit: cover;
         }
+
+        .service-gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); /* Passer de 3 à 4 colonnes */
+    gap: 1.5rem; /* Réduire l'espacement */
+}
+
+.service-gallery-item { 
+    aspect-ratio: 1; 
+    background: var(--light); 
+    border-radius: var(--radius); 
+    overflow: hidden; 
+    box-shadow: var(--shadow); 
+    transition: all 0.3s ease; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    position: relative; 
+    max-width: 250px; /* Ajoutez une largeur max */
+    margin: 0 auto; /* Centrer les items */
+}
+
+.service-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
         
         .hero-service-detail { background: linear-gradient(135deg, #1e3a5f 0%, #2a4d7a 100%); color: var(--white); padding: 80px 20px; text-align: center; }
         .hero-service-detail h1 { font-size: 2.8rem; margin-bottom: 1rem; }
@@ -55,8 +83,6 @@
         .service-gallery-section { padding: 80px 20px; background: var(--white); }
         .service-gallery-container { max-width: 1200px; margin: 0 auto; }
         .service-gallery-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
-        .service-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .service-gallery-item { aspect-ratio: 1; background: var(--light); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; }
         .service-gallery-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
         .service-gallery-placeholder { font-size: 3rem; opacity: 0.3; }
         .service-gallery-overlay { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 1rem; text-align: center; }
