@@ -26,17 +26,23 @@
         .service-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
 
                 /* MODIFIÉ : Image réelle au lieu du placeholder */
-        .service-intro-image { 
-            background-size: cover;
-            background-position: center;
-            border-radius: var(--radius); 
-            min-height: 350px; 
+        .service-intro-image {
+            background: var(--light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             box-shadow: var(--shadow);
-            background-image: url('../../images/maconnerie.jpg');
+        }
+
+        .service-intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .service-intro-image { background: var(--light); border-radius: var(--radius); padding: 2rem; min-height: 350px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
-        .service-intro-image-placeholder { font-size: 5rem; }
         .service-details-section { padding: 80px 20px; background: var(--light); }
         .service-details-container { max-width: 1200px; margin: 0 auto; }
         .service-details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
