@@ -16,6 +16,52 @@
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FWX8S7YRJ5'); </script>
    
     <style>
+
+        .service-intro-image {
+            background: var(--light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .service-intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); /* Passer de 3 à 4 colonnes */
+    gap: 1.5rem; /* Réduire l'espacement */
+}
+
+.service-gallery-item { 
+    aspect-ratio: 1; 
+    background: var(--light); 
+    border-radius: var(--radius); 
+    overflow: hidden; 
+    box-shadow: var(--shadow); 
+    transition: all 0.3s ease; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    position: relative; 
+    max-width: 250px; /* Ajoutez une largeur max */
+    margin: 0 auto; /* Centrer les items */
+}
+
+.service-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        
         .hero-service-detail { background: linear-gradient(135deg, #d4af37 0%, #c9a030 100%); color: var(--white); padding: 80px 20px; text-align: center; }
         .hero-service-detail h1 { font-size: 2.8rem; margin-bottom: 1rem; }
         .hero-service-detail p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto 2rem; }
@@ -24,8 +70,6 @@
         .service-intro-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
         .service-intro-text h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem; }
         .service-intro-text p { color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
-        .service-intro-image { background: var(--light); border-radius: var(--radius); padding: 2rem; min-height: 350px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
-        .service-intro-image-placeholder { font-size: 5rem; }
         .service-details-section { padding: 80px 20px; background: var(--light); }
         .service-details-container { max-width: 1200px; margin: 0 auto; }
         .service-details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
@@ -38,8 +82,6 @@
         .service-gallery-section { padding: 80px 20px; background: var(--white); }
         .service-gallery-container { max-width: 1200px; margin: 0 auto; }
         .service-gallery-container h2 { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
-        .service-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .service-gallery-item { aspect-ratio: 1; background: var(--light); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; }
         .service-gallery-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
         .service-gallery-placeholder { font-size: 3rem; opacity: 0.3; }
         .service-gallery-overlay { position: absolute; inset: 0; background: rgba(212, 175, 55, 0.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 1rem; text-align: center; }
@@ -86,6 +128,7 @@
                         <li><a href="/services/reparation-degats-eaux/">Réparation de dégâts des eaux</a></li>
                         <li><a href="/services/revetements-muraux/">Revêtements muraux</a></li>
                         <li><a href="/services/revetements-sols/">Revêtements de sols</a></li>
+                        <li><a href="/services/demenagement-nettoyage/">Déménagement & nettoyage</a></li>
                     </ul>
                 </li>
 
@@ -127,7 +170,7 @@
                 <p>Notre équipe intervient avec le matériel professionnel nécessaire : ragréage, découpe de précision, pose soignée et finitions parfaites.</p>
             </div>
             <div class="service-intro-image">
-                <div class="service-intro-image-placeholder">⬇️</div>
+                <img src="../../images/sols.jpg" alt="Travaux de pose de sol">
             </div>
         </div>
     </section>
@@ -181,30 +224,30 @@
     <section class="service-gallery-section">
         <div class="service-gallery-container">
             <h2>Nos Réalisations en Revêtements de Sols</h2>
-            <div class="service-gallery-grid">
+                        <div class="service-gallery-grid">
                 <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">⬇️</div>
-                    <div class="service-gallery-overlay"><h4>Carrelage salon</h4></div>
+                    <img src="../../images/realisations/sols-1.jpg" alt="Pose de parquet stratifié">
+                    <div class="service-gallery-overlay">
+                        <h4>Pose de parquet stratifié</h4>
+                    </div>
                 </div>
                 <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">⬇️</div>
-                    <div class="service-gallery-overlay"><h4>Parquet chambre</h4></div>
+                    <img src="../../images/realisations/sols-2.jpg" alt="Création d'une terrasse en pin">
+                    <div class="service-gallery-overlay">
+                        <h4>Création d'une terrasse en pin</h4>
+                    </div>
                 </div>
                 <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">⬇️</div>
-                    <div class="service-gallery-overlay"><h4>Stratifié cuisine</h4></div>
+                    <img src="../../images/realisations/sols-3.jpg" alt="Pose de lame de vynile">
+                    <div class="service-gallery-overlay">
+                        <h4>Pose de lame de vynile dans une cuisine</h4>
+                    </div>
                 </div>
                 <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">⬇️</div>
-                    <div class="service-gallery-overlay"><h4>Vinyl SDB</h4></div>
-                </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">⬇️</div>
-                    <div class="service-gallery-overlay"><h4>Carrelage terrasse</h4></div>
-                </div>
-                <div class="service-gallery-item">
-                    <div class="service-gallery-placeholder">⬇️</div>
-                    <div class="service-gallery-overlay"><h4>Parquet bureau</h4></div>
+                    <img src="../../images/realisations/sols-4.jpg" alt="Pose de parquet en batons rompus">
+                    <div class="service-gallery-overlay">
+                        <h4>Pose de parquet en bâtons rompus</h4>
+                    </div>
                 </div>
             </div>
         </div>
@@ -320,6 +363,7 @@
                         <li><a href="/services/platrerie/">Plâtrerie</a></li>
                         <li><a href="/services/menuiserie/">Menuiserie</a></li>
                         <li><a href="/services/reparation-degats-eaux/">Dégâts des eaux</a></li>
+                        <li><a href="/services/demenagement-nettoyage/">Déménagement & nettoyage</a></li>
                     </ul>
                 </div>
                 
